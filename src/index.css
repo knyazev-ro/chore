@@ -10,3 +10,11 @@
     font-weight: 1000;
     font-style: bold;
   }
+
+  .custom-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .custom-scroll {
+    -ms-overflow-style: none;  /* Для старых версий IE */
+    scrollbar-width: none;     /* Для Firefox */
+  }

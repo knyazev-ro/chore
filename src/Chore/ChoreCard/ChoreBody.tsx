@@ -8,7 +8,7 @@ export default function ChoreBody({ chore }: { chore: any }) {
       <div className="flex flex-col w-full h-9/12 bg-indigo-50 rounded-xl shadow-md">
        
         <div className="flex flex-col w-full px-1 py-1 h-full justify-between">
-          <div className="flex comfortaa px-1 py-1">{chore.title}</div>
+          <div className="flex comfortaa px-1 py-1 max-h-20 text-ellipsis overflow-hidden overflow-y-scroll custom-scroll">{chore.title}</div>
 
           <div className="flex justify-end">
             <Tags chore={chore} />
