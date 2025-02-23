@@ -3,9 +3,9 @@ import ChoreTrelloColumn from "./ChoreTrelloColumn";
 export default function ChoreTrello({ columns }: { columns: any }) {
   return (
     <>
-    <div className="w-screen h-screen overflow-scroll">
+    <div className="">
 
-      <div className="flex">
+      <div className="flex h-screen overflow-y-hidden custom-scroll">
         {columns.map((column: any) => (
           <ChoreTrelloColumn column={column} />
         ))}

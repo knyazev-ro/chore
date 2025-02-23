@@ -1,6 +1,7 @@
 import ChoreCard from "./Chore/ChoreCard/ChoreCard";
-import ChoreTrello from "./Chore/ChoreTrello";
-import ChoreTrelloColumn from "./Chore/ChoreTrelloColumn";
+import ChoreTrello from "./Chore/Trello/ChoreTrello";
+import ChoreTrelloColumn from "./Chore/Trello/ChoreTrelloColumn";
+import TrelloPage from "./Chore/TrelloPage/TrelloPage";
 
 function App() {
   const chore = {
@@ -459,84 +460,72 @@ const chore20 = {
 const column = {
   title: "Важное",
   items: [chore, chore2, chore24],  // Ключевые задачи
-  bg_color: '#E8F5FD',      // Светло-голубой
+  bg_color: '#D1E8FF',      // Мягкий светло-голубой
   title_color: '#1DA1F2',   // Ярко-синий (Twitter Blue)
 };
 
 const column1 = {
   title: "Не очень важное",
   items: [chore21, chore23],  // Необязательные задачи
-  bg_color: '#F5F8FA',      // Светло-серый-голубой
+  bg_color: '#E2F1FA',      // Мягкий голубовато-серый
   title_color: '#657786',   // Спокойный серо-синий
 };
 
 const column2 = {
   title: "В процессе",
   items: [chore2, chore20, chore22, chore20, chore22],  // Сейчас выполняются
-  bg_color: '#FFF7E6',      // Светло-жёлтый
+  bg_color: '#FFF1D4',      // Теплый светло-желтый
   title_color: '#FFAD1F',   // Яркий жёлто-оранжевый
 };
 
 const column3 = {
   title: "Завершено",
   items: [chore1, chore24, chore21],  // Завершенные задачи
-  bg_color: '#E6F4EA',      // Светло-зелёный
+  bg_color: '#D9F0D7',      // Светлый зелёный с более нежным оттенком
   title_color: '#17BF63',   // Яркий зелёный
 };
 
 const column4 = {
   title: "Ожидание",
   items: [chore20, chore22],  // Ждут подтверждения или ревью
-  bg_color: '#FFF0E6',      // Светлый персиковый
+  bg_color: '#FEE2D6',      // Теплый персиковый
   title_color: '#E0245E',   // Яркий розово-красный
 };
 
 const column5 = {
   title: "Срочно!",
   items: [chore, chore23],  // Высокий приоритет
-  bg_color: '#FFE6E6',      // Светло-розовый
+  bg_color: '#FFD1D1',      // Мягкий светло-розовый
   title_color: '#E0245E',   // Яркий розово-красный
 };
 
 const column6 = {
   title: "Может подождать",
   items: [chore1, chore2],  // Низкий приоритет
-  bg_color: '#F0F4F8',      // Нежный серо-голубой
+  bg_color: '#D8E3E9',      // Тонкий серо-голубой
   title_color: '#8899A6',   // Спокойный серый
 };
 
 const column7 = {
   title: "Архив",
   items: [chore22, chore24],  // Устаревшие задачи
-  bg_color: '#F4F4F9',      // Светло-серый
+  bg_color: '#E9E9F3',      // Мягкий светло-серый
   title_color: '#AAB8C2',   // Бледно-серый
 };
 
 const columns = [column, column1, column2, column3, column4, column5, column6, column7];
 
+const project = {
+  id: 1, 
+  title: "Leonovo Trello",
+  bg_color: '#40bbea',
+  columns: columns,
+  avatar: "https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?t=st=1740330839~exp=1740334439~hmac=b9694f5d1010c4b6d81b2c29bfb769a9589a050c5c6d781ddcab3c7933c190ee&w=900",
+}
+
   return (
     <>
-      {/* <div className="flex gap-2 py-2 px-2 bg-indigo-200 flex-wrap items-center justify-center">
-        <ChoreCard chore={chore} />
-        <ChoreCard chore={chore1} />
-        <ChoreCard chore={chore2} />
-        <ChoreCard chore={chore3} />
-        <ChoreCard chore={chore4} />
-        <ChoreCard chore={chore5} />
-        <ChoreCard chore={chore6} />
-
-        <ChoreCard chore={chore7} />
-        <ChoreCard chore={chore8} />
-        <ChoreCard chore={chore9} />
-        <ChoreCard chore={chore20} />
-        <ChoreCard chore={chore21} />
-        <ChoreCard chore={chore22} />
-        <ChoreCard chore={chore23} />
-        <ChoreCard chore={chore24} />
-
-        <ChoreCard chore={chore50} />
-      </div> */}
-      <ChoreTrello columns={columns}/>
+      <TrelloPage project={project}/>
     </>
   );
 }

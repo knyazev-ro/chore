@@ -1,4 +1,4 @@
-import ChoreCard from "./ChoreCard/ChoreCard";
+import ChoreCard from "../ChoreCard/ChoreCard";
 import { EllipsisHorizontalIcon, PlusIcon } from "@heroicons/react/24/solid";
 
 export default function ChoreTrelloColumn({ column }: { column: any }) {
@@ -7,10 +7,10 @@ export default function ChoreTrelloColumn({ column }: { column: any }) {
   return (
     <>
       <div
-        className="group flex flex-col min-w-80 border-3 border-green-300 bg-green-300 backdrop-blur-md hover:bg-white/20 transition-all duration-300 relative"
+        className="group flex flex-col min-w-80 border-3 border-green-300 bg-green-300 backdrop-blur-md hover:bg-white/20 transition-all duration-300 relative h-screen overflow-scroll custom-scroll"
         style={{ backgroundColor: bg_color, borderColor: bg_color }}
       >
-        <div className="bg-slate-900 h-12 flex items-center justify-between rounded-b-2xl px-4">
+        <div className="sticky z-20 top-0 bg-slate-900 min-h-12 flex items-center justify-between rounded-b-2xl px-4">
           <div>
             <EllipsisHorizontalIcon className="h-6 w-6 text-rose-50 cursor-pointer" />
           </div>
@@ -32,9 +32,12 @@ export default function ChoreTrelloColumn({ column }: { column: any }) {
             <ChoreCard chore={e} />
           ))}
 
+<div className="h-30">
+
           <div className="w-20 h-20 rounded-full cursor-pointer border-4 border-dashed border-slate-900 items-center justify-center flex shadow-md bg-white/10 backdrop-blur-md hover:border-slate-700 group-hover:opacity-100 opacity-0 transition-all duration-300">
             <PlusIcon className="h-10 w-10 text-slate-900 font-extrabold drop-shadow-lg" />
           </div>
+</div>
         </div>
       </div>
     </>

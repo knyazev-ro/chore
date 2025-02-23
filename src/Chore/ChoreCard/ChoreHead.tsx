@@ -5,7 +5,7 @@ export default function ChoreHead({ chore }: { chore: any }) {
   return (
     <div className="gap-1 items-center flex w-full h-3/12">
       <img src={chore?.project?.logo} alt='Logo' className="bg-slate-900 w-10 h-10 min-h-10 min-w-10 rounded-full"/>
-      <div className="flex bg-slate-900 min-w-58 max-w-58 h-10 rounded-l-full justify-between items-center">
+      <div className="flex bg-slate-900 min-w-58 max-w-58 h-10 rounded-full justify-between items-center">
         <div className="w-full overflow-hidden">
           <MultiplePersons chore={chore}/>
         </div>
