@@ -1,4 +1,4 @@
-export default function Main({data}:{data:any}) {
+export default function MainTab({data}:{data:any}) {
   return (
     <>
       <div>

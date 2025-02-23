@@ -5,13 +5,16 @@ import MainTab from "./Tab/Tabs/MainTab";
 import TimeTab from "./Tab/Tabs/TimeTab";
 import Tab from "./Tab/Tab";
 
-export default function ChoreModal({
+export default function CurrentChoreModal({
   setShowModal,
   showModal,
+  chore,
 }: {
   setShowModal: any;
   showModal: boolean;
+  chore: any;
 }) {
+  const { title } = chore;
   const [tabs, setTabs] = useState([
     {
       id: 0,
@@ -47,11 +50,11 @@ export default function ChoreModal({
 
   return (
     <Modal showModal={showModal}>
-      <div className="flex flex-col w-1/2 h-2/3 bg-rose-50 rounded-2xl border-3 border-sky-500 shadow-md items-center">
+      <div className="flex flex-col w-11/12 h-5/6 bg-rose-50 rounded-2xl border-3 border-sky-500 shadow-md items-center">
         <div className="bg-slate-900 h-16 border-rose-500 flex rounded-t-2xl items-center justify-between px-2 py-2 w-full z-1">
           <div className="w-9"></div>
           <div className="rounded-2xl border-double px-4 py-1 border-4 border-rose-500 comfortaa text-rose-50">
-            {"Создать чор"}
+            {title}
           </div>
 
           <div
@@ -62,8 +65,13 @@ export default function ChoreModal({
           </div>
         </div>
 
-        {/* Основной контейнер */}
-        <Tab tabs={tabs} setTabs={setTabs} />
+        <div className="flex gap-1 w-full h-full">
+          <div className="w-140 h-full border"></div>
+
+          <div className="w-220 h-full border">
+            <Tab tabs={tabs} setTabs={setTabs} />
+          </div>
+        </div>
       </div>
     </Modal>
   );
