@@ -68,7 +68,7 @@ export default function CurrentChoreModal({
         </div>
 
         {/* Основной контейнер */}
-        <div className="flex gap-1 w-full h-full bg-stone-100">
+        <div className="flex gap-1 w-full h-full bg-stone-100 rounded-2xl">
           <div className="flex flex-col w-140 h-full p-6 gap-2">
             <div className="flex-col bg-white rounded-md h-full flex p-2">
               <h1 className="bg-white comfortaa text-2xl border-b-2 p-3 border-b-slate-300 text-gray-400">
