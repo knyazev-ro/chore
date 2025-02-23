@@ -426,7 +426,7 @@ const chore20 = {
   estimation_time: '24h. 00m. 00sec.',
   estimation: 86400,
   duration_time: '30h. 15m. 00sec.',
-  duration: 100900,
+  duration: 76900,
   status_label: "Completed",
   options: {
       tags: [
