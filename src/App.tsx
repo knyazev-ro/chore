@@ -518,7 +518,10 @@ const columns = [column, column1, column2, column3, column4, column5, column6, c
 const project = {
   id: 1, 
   title: "Leonovo Trello",
-  bg_color: '#40bbea',
+  bg_color: '#1DA1F2',
+  bg_color_first: '#E1E8ED',
+  bg_color_second: '#657786',
+  title_color: '#F5F8FA',
   columns: columns,
   avatar: "https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?t=st=1740330839~exp=1740334439~hmac=b9694f5d1010c4b6d81b2c29bfb769a9589a050c5c6d781ddcab3c7933c190ee&w=900",
 }
