@@ -7,7 +7,7 @@ export default function ChoreTrelloColumn({ column }: { column: any }) {
   return (
     <>
       <div
-        className="flex flex-col min-w-80 border-3 border-green-300 bg-green-300"
+        className="group flex flex-col min-w-80 border-3 border-green-300 bg-green-300 backdrop-blur-md hover:bg-white/20 transition-all duration-300 relative"
         style={{ backgroundColor: bg_color, borderColor: bg_color }}
       >
         <div className="bg-slate-900 h-12 flex items-center justify-between rounded-b-2xl px-4">
@@ -32,10 +32,9 @@ export default function ChoreTrelloColumn({ column }: { column: any }) {
             <ChoreCard chore={e} />
           ))}
 
-<div className="w-20 h-20 rounded-full border-4 cursor-pointer border-dashed border-white items-center justify-center flex shadow-md bg-white/10 backdrop-blur-md">
-  <PlusIcon className="h-10 w-10 text-white font-extrabold drop-shadow-lg" />
-</div>
-
+          <div className="w-20 h-20 rounded-full cursor-pointer border-4 border-dashed border-slate-900 items-center justify-center flex shadow-md bg-white/10 backdrop-blur-md hover:border-slate-700 group-hover:opacity-100 opacity-0 transition-all duration-300">
+            <PlusIcon className="h-10 w-10 text-slate-900 font-extrabold drop-shadow-lg" />
+          </div>
         </div>
       </div>
     </>

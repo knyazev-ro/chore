@@ -459,61 +459,60 @@ const chore20 = {
 const column = {
   title: "Важное",
   items: [chore, chore2, chore24],  // Ключевые задачи
-  bg_color: '#F4F4F9',
-  title_color: '#333333',
+  bg_color: '#E8F5FD',      // Светло-голубой
+  title_color: '#1DA1F2',   // Ярко-синий (Twitter Blue)
 };
 
 const column1 = {
   title: "Не очень важное",
   items: [chore21, chore23],  // Необязательные задачи
-  bg_color: '#EAEAEA',
-  title_color: '#4F4F4F',
+  bg_color: '#F5F8FA',      // Светло-серый-голубой
+  title_color: '#657786',   // Спокойный серо-синий
 };
 
 const column2 = {
   title: "В процессе",
   items: [chore2, chore20, chore22, chore20, chore22],  // Сейчас выполняются
-  bg_color: '#F0F4F8',
-  title_color: '#2C3E50',
+  bg_color: '#FFF7E6',      // Светло-жёлтый
+  title_color: '#FFAD1F',   // Яркий жёлто-оранжевый
 };
 
 const column3 = {
   title: "Завершено",
   items: [chore1, chore24, chore21],  // Завершенные задачи
-  bg_color: '#EDF7ED',
-  title_color: '#27AE60',
+  bg_color: '#E6F4EA',      // Светло-зелёный
+  title_color: '#17BF63',   // Яркий зелёный
 };
 
 const column4 = {
   title: "Ожидание",
   items: [chore20, chore22],  // Ждут подтверждения или ревью
-  bg_color: '#FFF4E5',
-  title_color: '#E67E22',
+  bg_color: '#FFF0E6',      // Светлый персиковый
+  title_color: '#E0245E',   // Яркий розово-красный
 };
 
 const column5 = {
   title: "Срочно!",
   items: [chore, chore23],  // Высокий приоритет
-  bg_color: '#FDEDEC',
-  title_color: '#C0392B',
+  bg_color: '#FFE6E6',      // Светло-розовый
+  title_color: '#E0245E',   // Яркий розово-красный
 };
 
 const column6 = {
   title: "Может подождать",
   items: [chore1, chore2],  // Низкий приоритет
-  bg_color: '#F7F9F9',
-  title_color: '#95A5A6',
+  bg_color: '#F0F4F8',      // Нежный серо-голубой
+  title_color: '#8899A6',   // Спокойный серый
 };
 
 const column7 = {
   title: "Архив",
   items: [chore22, chore24],  // Устаревшие задачи
-  bg_color: '#ECECEC',
-  title_color: '#7F8C8D',
+  bg_color: '#F4F4F9',      // Светло-серый
+  title_color: '#AAB8C2',   // Бледно-серый
 };
 
 const columns = [column, column1, column2, column3, column4, column5, column6, column7];
-
 
   return (
     <>
