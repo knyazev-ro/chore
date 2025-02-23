@@ -14,7 +14,7 @@ export default function TrelloHead({ project }: { project: any }) {
 
   return (
     <>
-      <div className="flex w-full h-10 items-center justify-between px-2 gap-4 bg-slate-900">
+      <div className="flex w-full h-12 items-center justify-between px-2 gap-4 bg-slate-900">
         <div>
           <ChevronLeftIcon className="h-6 w-6 text-rose-50 font-bold" />
         </div>

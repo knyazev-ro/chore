@@ -1,7 +1,7 @@
 import ChoreCard from "../ChoreCard/ChoreCard";
 import { EllipsisHorizontalIcon, PlusIcon } from "@heroicons/react/24/solid";
 
-export default function ChoreTrelloColumn({ column }: { column: any }) {
+export default function ChoreTrelloColumn({ column, handleClickPlusButton }: { column: any, handleClickPlusButton:any }) {
   const { title, items, bg_color, title_color } = column;
 
   return (
@@ -34,7 +34,9 @@ export default function ChoreTrelloColumn({ column }: { column: any }) {
 
 <div className="h-30">
 
-          <div className="w-20 h-20 rounded-full cursor-pointer border-4 border-dashed border-slate-900 items-center justify-center flex shadow-md bg-white/10 backdrop-blur-md hover:border-slate-700 group-hover:opacity-100 opacity-0 transition-all duration-300">
+          <div className="w-20 h-20 rounded-full cursor-pointer border-4 border-dashed border-slate-900 items-center justify-center flex shadow-md bg-white/10 backdrop-blur-md hover:border-slate-700 group-hover:opacity-100 opacity-0 transition-all duration-300"
+          onClick={handleClickPlusButton}
+          >
             <PlusIcon className="h-10 w-10 text-slate-900 font-extrabold drop-shadow-lg" />
           </div>
 </div>
