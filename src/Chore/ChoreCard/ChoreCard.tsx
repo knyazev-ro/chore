@@ -3,7 +3,8 @@ import ChoreHead from "./ChoreHead";
 
 export default function ChoreCard({ chore }: { chore: any }) {
   const {estimation, duration} = chore;
-  const widthPercentage = (duration / estimation) * 100;
+  const widthPercentage = (duration / estimation) * 100 > 100 ? 100 : (duration / estimation) * 100;
+
   return (
     <>
     <div className="relative flex flex-col z-10">

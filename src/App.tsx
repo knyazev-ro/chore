@@ -426,7 +426,7 @@ const chore20 = {
   estimation_time: '24h. 00m. 00sec.',
   estimation: 86400,
   duration_time: '30h. 15m. 00sec.',
-  duration: 78900,
+  duration: 100900,
   status_label: "Completed",
   options: {
       tags: [
@@ -456,7 +456,7 @@ const chore20 = {
 
   return (
     <>
-      <div className="flex gap-2 py-2 px-2 bg-indigo-200 flex-wrap">
+      <div className="flex gap-2 py-2 px-2 bg-indigo-200 flex-wrap items-center justify-center">
         <ChoreCard chore={chore} />
         <ChoreCard chore={chore1} />
         <ChoreCard chore={chore2} />
