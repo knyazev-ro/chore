@@ -7,12 +7,14 @@ interface Tag {
   title: string;
 }
 
-export default function Tags({ chore }: { chore: any }) {
+export default function Tags({ chore, fontSize="8px" }: { chore: any, fontSize:string }) {
   const tags: Array<Tag> = chore.options?.tags ?? [];
 
   return (
     <>
-      <div className="flex flex-wrap text-[8px] gap-1 font-bold">
+      <div className="flex flex-wrap gap-1 font-bold"
+      style={{fontSize:fontSize}}
+      >
         {tags.map((e) => (
           <Tag tag={e} />
         ))}
