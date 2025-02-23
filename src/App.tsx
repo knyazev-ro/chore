@@ -1,4 +1,6 @@
 import ChoreCard from "./Chore/ChoreCard/ChoreCard";
+import ChoreTrello from "./Chore/ChoreTrello";
+import ChoreTrelloColumn from "./Chore/ChoreTrelloColumn";
 
 function App() {
   const chore = {
@@ -454,9 +456,68 @@ const chore20 = {
   },
 };
 
+const column = {
+  title: "Важное",
+  items: [chore, chore2, chore24],  // Ключевые задачи
+  bg_color: '#F4F4F9',
+  title_color: '#333333',
+};
+
+const column1 = {
+  title: "Не очень важное",
+  items: [chore21, chore23],  // Необязательные задачи
+  bg_color: '#EAEAEA',
+  title_color: '#4F4F4F',
+};
+
+const column2 = {
+  title: "В процессе",
+  items: [chore2, chore20, chore22, chore20, chore22],  // Сейчас выполняются
+  bg_color: '#F0F4F8',
+  title_color: '#2C3E50',
+};
+
+const column3 = {
+  title: "Завершено",
+  items: [chore1, chore24, chore21],  // Завершенные задачи
+  bg_color: '#EDF7ED',
+  title_color: '#27AE60',
+};
+
+const column4 = {
+  title: "Ожидание",
+  items: [chore20, chore22],  // Ждут подтверждения или ревью
+  bg_color: '#FFF4E5',
+  title_color: '#E67E22',
+};
+
+const column5 = {
+  title: "Срочно!",
+  items: [chore, chore23],  // Высокий приоритет
+  bg_color: '#FDEDEC',
+  title_color: '#C0392B',
+};
+
+const column6 = {
+  title: "Может подождать",
+  items: [chore1, chore2],  // Низкий приоритет
+  bg_color: '#F7F9F9',
+  title_color: '#95A5A6',
+};
+
+const column7 = {
+  title: "Архив",
+  items: [chore22, chore24],  // Устаревшие задачи
+  bg_color: '#ECECEC',
+  title_color: '#7F8C8D',
+};
+
+const columns = [column, column1, column2, column3, column4, column5, column6, column7];
+
+
   return (
     <>
-      <div className="flex gap-2 py-2 px-2 bg-indigo-200 flex-wrap items-center justify-center">
+      {/* <div className="flex gap-2 py-2 px-2 bg-indigo-200 flex-wrap items-center justify-center">
         <ChoreCard chore={chore} />
         <ChoreCard chore={chore1} />
         <ChoreCard chore={chore2} />
@@ -475,7 +536,8 @@ const chore20 = {
         <ChoreCard chore={chore24} />
 
         <ChoreCard chore={chore50} />
-      </div>
+      </div> */}
+      <ChoreTrello columns={columns}/>
     </>
   );
 }
