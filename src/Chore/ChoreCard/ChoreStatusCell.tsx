@@ -27,7 +27,7 @@ export default function ChoreStatusCell({ value }:{value: any}) {
 
   return (
     <>
-      <div className={'px-2 py-1 rounded-full flex items-center justify-center font-bold text-nowrap ' + color}>
+      <div className={'px-2 py-1 rounded-full flex items-center justify-center font-bold comfortaa text-nowrap ' + color}>
         <div>{status_label}</div>
       </div>
     </>
