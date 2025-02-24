@@ -19,9 +19,14 @@ export default function ChoreCard({ chore }: { chore: any }) {
           <ChoreBody chore={chore}/>
         </div>
       </div>
-      <div className="-z-10 absolute px-1 py-1 flex h-50 bg-rose-500 rounded-b-2xl translate-y-1 transition-all duration-300"
+      <div className="-z-10 absolute w-72 flex h-50 rounded-2xl translate-y-1 shadow-sm shadow-rose-300 overflow-hidden transition-all duration-300"
+      >
+                    <div className="w-full h-full bg-rose-500"
         style={{ width: `${widthPercentage}%` }}
-      />
+      >
+
+      </div>
+      </div>
       </div>
     
       <CurrentChoreModal isNew={false} showModal={showModal} setShowModal={setShowModal} chore={chore}/>
