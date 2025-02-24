@@ -24,7 +24,7 @@ export default function ChoreCard({ chore }: { chore: any }) {
       />
       </div>
     
-      <CurrentChoreModal showModal={showModal} setShowModal={setShowModal} chore={chore}/>
+      <CurrentChoreModal isNew={false} showModal={showModal} setShowModal={setShowModal} chore={chore}/>
     </>
   );
 }
