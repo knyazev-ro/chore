@@ -1,5 +1,4 @@
 import ChoreTrelloColumn from "./ChoreTrelloColumn";
-import ChoreModal from "../../Modals/ChoreModal/ChoreModal";
 import { useState } from "react";
 import CurrentChoreModal from "../../Modals/ChoreModal/CurrentChoreModal";
 

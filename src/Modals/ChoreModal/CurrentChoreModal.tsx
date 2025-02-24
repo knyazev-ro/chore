@@ -4,21 +4,20 @@ import { useState, useEffect, useRef } from "react";
 import MainTab from "./Tab/Tabs/MainTab";
 import TimeTab from "./Tab/Tabs/TimeTab";
 import Tab from "./Tab/Tab";
-import { PlusIcon } from "@heroicons/react/24/outline";
-import Tags from "../../Chore/ChoreCard/Tags";
+import AddTagPlus from "./AddTagPlus";
 
 export default function CurrentChoreModal({
   setShowModal,
   showModal,
   chore,
-  isNew,
+  isNew=false,
 }: {
   setShowModal: any;
   showModal: boolean;
   chore: any;
   isNew:boolean;
 }) {
-  const [openTags, setOpenTags] = useState(false);
+
   const [tabs, setTabs] = useState([
     {
       id: 0,
@@ -58,21 +57,6 @@ export default function CurrentChoreModal({
     description: chore?.description ?? "",
   });
 
-  const ref = useRef(null);
-
-  const handleClickOutside = (event) => {
-    if (ref.current && !ref.current.contains(event.target)) {
-      setOpenTags(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   console.log(([...singleChore.title]).length > 1);
 
   return (
@@ -81,7 +65,7 @@ export default function CurrentChoreModal({
         <div className="bg-slate-800 h-16 border-green-500 flex rounded-t-2xl items-center justify-between px-2 py-2 w-full z-1">
           <div className="w-9"></div>
           <div className="rounded-2xl border-double px-4 py-1 border-4 border-green-500 comfortaa text-rose-50">
-            {(isNew && (([...singleChore.title]).length > 1)) ? singleChore.title : "Создать чор"}
+            {(!isNew || (([...singleChore.title]).length > 1)) ? singleChore.title : "Создать чор"}
           </div>
 
           <div
@@ -93,11 +77,12 @@ export default function CurrentChoreModal({
         </div>
 
         {/* Основной контейнер */}
-        <div className="flex gap-1 w-full h-full bg-slate-900 rounded-2xl">
+        <div className="flex gap-1 w-full h-full bg-slate-900 rounded-2xl justify-between">
+          
           <div className="flex flex-col w-140 h-full p-6 gap-2">
             <div className="flex-col bg-white border-2 border-green-500 rounded-md h-full flex p-2">
-              <input
-                className="bg-white comfortaa text-2xl border-b-2 p-3 border-b-slate-300 focus:outline-none resize-none text-slate-800 placeholder-gray-300"
+              <textarea
+                className="bg-white comfortaa text-2xl border-b-2 p-3 border-b-slate-300 focus:outline-none text-slate-800 placeholder-gray-300 custom-scroll min-h-20 max-h-32 h-20"
                 value={singleChore.title}
                 placeholder={"Название чора..."}
                 onChange={(e) =>
@@ -110,44 +95,7 @@ export default function CurrentChoreModal({
                   className="flex p-2 placeholder-gray-300 h-full focus:outline-none overflow-y-scroll overflow-hidden custom-scroll"
                   placeholder={"Текст чора"}
                 />
-                <div className="flex h-10 rounded-2xl justify-between px-2">
-                  <div className="flex items-center text-gray-300 text-[12px] gap-2">
-                    <div>{"tags: "}</div>
-                    <Tags chore={chore} fontSize="12px" />
-                  </div>
-                  <div className="relative flex items-center justify-center">
-                    <PlusIcon
-                      className="cursor-pointer h-6 w-6 text-green-600 font-bold"
-                      onClick={() => setOpenTags((prev) => !prev)}
-                    />
-                    {openTags && (
-                      <div
-                        ref={ref}
-                        className="absolute bg-white w-64 h-20 border-2 text-wrap truncate rounded-t-2xl rounded-l-2xl px-2 -translate-y-16 -translate-x-32"
-                      >
-                        <div className="flex flex-col items-center justify-center h-full overflow-scroll custom-scroll">
-                          <Tags
-                            chore={{
-                              options: {
-                                tags: [
-                                  { title: "UI/UX", color: "#FF69B4", id: 1 },
-                                  { title: "mobile", color: "#20B2AA", id: 2 },
-                                  { title: "some", color: "#20B2AA", id: 2 },
-                                  { title: "else", color: "#20B2AA", id: 2 },
-                                  { title: "UI/UX", color: "#FF69B4", id: 1 },
-                                  { title: "mobile", color: "#20B2AA", id: 2 },
-                                  { title: "some", color: "#20B2AA", id: 2 },
-                                  { title: "else", color: "#20B2AA", id: 2 },
-                                ],
-                              },
-                            }}
-                            fontSize="12px"
-                          />
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
+                <AddTagPlus chore={chore}/>
               </div>
             </div>
           </div>
