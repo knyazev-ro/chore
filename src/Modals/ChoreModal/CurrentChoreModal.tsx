@@ -59,15 +59,50 @@ export default function CurrentChoreModal({
     id: chore?.id ?? null,
     title: chore?.title ?? "",
     description: chore?.description ?? "",
-  });
+    status: chore?.status ?? null,
+    estimationTime: chore?.estimation_time ?? "",
+    estimation: chore?.estimation ?? 0,
+    durationTime: chore?.duration_time ?? "",
+    duration: chore?.duration ?? 0,
+    statusLabel: chore?.status_label ?? "",
+    tags: chore?.options?.tags ?? [],
+    createdBy: chore?.created_by ?? "",
+    responsible: chore?.responsible ?? "",
+    closedBy: chore?.closed_by ?? "",
+    auditors: chore?.auditors ?? [],
+    accomplicies: chore?.accomplicies ?? [],
+    project: {
+        id: chore?.project?.id ?? null,
+        title: chore?.project?.title ?? "",
+        logo: chore?.project?.logo ?? ""
+    }
+});
 
-  useEffect(() => {
+useEffect(() => {
     setSingleChore({
         id: chore?.id ?? null,
         title: chore?.title ?? "",
         description: chore?.description ?? "",
-    })
-  }, [showModal]);
+        status: chore?.status ?? null,
+        estimationTime: chore?.estimation_time ?? "",
+        estimation: chore?.estimation ?? 0,
+        durationTime: chore?.duration_time ?? "",
+        duration: chore?.duration ?? 0,
+        statusLabel: chore?.status_label ?? "",
+        tags: chore?.options?.tags ?? [],
+        createdBy: chore?.created_by ?? "",
+        responsible: chore?.responsible ?? "",
+        closedBy: chore?.closed_by ?? "",
+        auditors: chore?.auditors ?? [],
+        accomplicies: chore?.accomplicies ?? [],
+        project: {
+            id: chore?.project?.id ?? null,
+            title: chore?.project?.title ?? "",
+            logo: chore?.project?.logo ?? ""
+        }
+    });
+}, [showModal]);
+
 
   return (
     <Modal showModal={showModal}>
@@ -106,7 +141,7 @@ export default function CurrentChoreModal({
                   className="flex p-2 placeholder-gray-300 h-full focus:outline-none overflow-y-scroll overflow-hidden custom-scroll"
                   placeholder={"Текст чора"}
                 />
-                <AddTagPlus chore={chore}/>
+                <AddTagPlus chore={singleChore} setSingleChore={setSingleChore}/>
               </div>
             </div>
           </div>

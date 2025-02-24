@@ -12,7 +12,7 @@ export default function Tab({
       {/* Основной контейнер */}
       <div className="flex flex-col py-7 h-10/12 w-full items-center overflow-y-scroll overflow-hidden custom-scroll z-0">
         <div className="border-2 bg-rose-50 border-green-500 p-4 rounded-2xl space-y-3 w-11/12 -translate-y-1">
-          <div className="flex -translate-y-11 w-full">
+          <div className="flex -translate-y-11 translate-x-2 w-full">
             {tabs.map((tab) => (
               <div
                 key={tab.id}
