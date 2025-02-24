@@ -1,6 +1,7 @@
 import ChoreTrelloColumn from "./ChoreTrelloColumn";
 import ChoreModal from "../../Modals/ChoreModal/ChoreModal";
 import { useState } from "react";
+import CurrentChoreModal from "../../Modals/ChoreModal/CurrentChoreModal";
 
 export default function ChoreTrello({ columns }: { columns: any }) {
   
@@ -20,7 +21,7 @@ export default function ChoreTrello({ columns }: { columns: any }) {
       </div>
     </div>
 
-    <ChoreModal showModal={showModal} setShowModal={setShowModal}/>
+    <CurrentChoreModal isNew={true} chore={{}} showModal={showModal} setShowModal={setShowModal}/>
     </>
   );
 }
