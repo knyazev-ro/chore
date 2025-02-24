@@ -72,7 +72,7 @@ export default function CurrentChoreModal({
   return (
     <Modal showModal={showModal}>
         <div className="relative w-full h-full flex items-center justify-center">
-      <div className="z-10 flex flex-col w-11/12 h-5/6 bg-slate-900 rounded-2xl border-t-3 border-l-3 border-r-3 border-sky-500 shadow-md items-center py-1">
+      <div className="z-10 flex flex-col w-11/12 h-5/6 bg-slate-900 rounded-3xl border-t-3 border-l-3 border-r-3 border-sky-500 shadow-md items-center py-1">
         <div className="bg-slate-800 h-16 border-green-500 flex rounded-t-2xl items-center justify-between px-2 py-2 w-full z-1">
           <div className="w-9"></div>
           <div className="rounded-2xl border-double px-4 py-1 border-4 border-green-500 comfortaa text-rose-50">
@@ -90,7 +90,7 @@ export default function CurrentChoreModal({
         {/* Основной контейнер */}
         <div className="flex gap-1 w-full h-full bg-slate-900 rounded-2xl justify-between">
           
-          <div className="flex flex-col w-140 h-full p-6 gap-2">
+          <div className="flex flex-col w-1/2 h-full p-6 gap-2">
             <div className="flex-col bg-white border-2 border-green-500 rounded-md h-full flex p-2">
               <textarea
                 className="bg-white comfortaa text-2xl border-b-2 p-3 border-b-slate-300 focus:outline-none text-slate-800 placeholder-gray-300 custom-scroll min-h-20 max-h-32 h-20"
@@ -118,8 +118,8 @@ export default function CurrentChoreModal({
           </div>
         </div>
       </div>
-      <div className="absolute flex flex-col w-11/12 h-5/6 translate-y-2 border-2 rounded-2xl shadow-md overflow-hidden">
-      <div className="h-full bg-red-400"
+      <div className="absolute flex flex-col w-11/12 h-5/6 translate-y-1 rounded-3xl shadow-md overflow-hidden">
+      <div className="h-full bg-sky-500"
               style={{ width: `${widthPercentage}%` }}
       >
 
