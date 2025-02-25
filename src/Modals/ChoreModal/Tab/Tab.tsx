@@ -13,7 +13,7 @@ export default function Tab({
   return (
     <>
       {/* Основной контейнер */}
-      <div className="relative flex flex-col h-full w-full items-center z-0 border-green-500 bg-rose-50 rounded-2xl">
+      <div className="relative flex flex-col h-full w-full items-center z-0 border-green-500 rounded-2xl border-2 bg-slate-950">
 
           <div className="z-10 flex gap-1 -translate-y-7 translate-x-8 w-full h-full">
             {tabs.map((tab) => (

@@ -108,7 +108,7 @@ export default function CurrentChoreModal({
       <div className="relative w-full h-11/12 flex items-center justify-center">
         <div className="z-10 flex flex-col w-11/12 h-11/12 bg-slate-900 rounded-3xl border-t-3 border-l-3 border-r-3 border-sky-500 shadow-md items-center py-1 overflow-hidden">
          
-          <div className="bg-slate-800 h-16 border-green-500 flex rounded-t-2xl items-center justify-between px-4 py-2 w-full z-1">
+          <div className="bg-slate-800 h-16 border-green-500 flex items-center justify-between px-4 py-2 w-full z-1">
             <div className="w-32">
               <ChoreStatusCell value={singleChore} />
             </div>
@@ -165,7 +165,7 @@ export default function CurrentChoreModal({
             </div>
 
             <div className="w-220 h-full p-6">
-              <div className="h-full flex border-2 border-green-500 rounded-2xl">
+              <div className="h-full flex border-2">
                 <Tab
                   tabs={tabs}
                   setTabs={setTabs}
