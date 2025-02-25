@@ -107,7 +107,7 @@ useEffect(() => {
 
   return (
     <Modal showModal={showModal}>
-        <div className="relative w-full h-full flex items-center justify-center">
+        <div className="relative w-full h-11/12 flex items-center justify-center">
       <div className="z-10 flex flex-col w-11/12 h-5/6 bg-slate-900 rounded-3xl border-t-3 border-l-3 border-r-3 border-sky-500 shadow-md items-center py-1">
         <div className="bg-slate-800 h-16 border-green-500 flex rounded-t-2xl items-center justify-between px-4 py-2 w-full z-1">
           <div className="w-32">
@@ -147,6 +147,7 @@ useEffect(() => {
                   className="flex p-2 placeholder-gray-300 h-full focus:outline-none overflow-y-scroll overflow-hidden custom-scroll"
                   placeholder={"Текст чора"}
                   value={singleChore.description}
+                  onChange={(e) => setSingleChore({...singleChore, description:e.target.value})}
                 />
                 <AddTagPlus chore={singleChore} setSingleChore={setSingleChore}/>
               </div>
@@ -155,13 +156,13 @@ useEffect(() => {
 
           <div className="w-220 h-full p-6">
             <div className="h-full flex border-2 border-green-500 rounded-2xl">
-              <Tab tabs={tabs} setTabs={setTabs} />
+              <Tab tabs={tabs} setTabs={setTabs} chore={singleChore} setChore={setSingleChore}/>
             </div>
           </div>
         </div>
       </div>
       <div className="absolute flex flex-col w-11/12 h-5/6 translate-y-1 rounded-3xl shadow-md overflow-hidden">
-      <div className="h-full bg-sky-500"
+      <div className="h-full bg-sky-500 animate-pulse"
               style={{ width: `${widthPercentage}%` }}
       >
 

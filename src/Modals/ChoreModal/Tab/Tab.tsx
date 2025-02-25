@@ -1,18 +1,21 @@
 export default function Tab({
   tabs,
   setTabs,
-  data,
+  chore,
+  setChore,
 }: {
   tabs: any;
   setTabs: any;
   data: any;
+  chore:any;
+  setChore:any;
 }) {
   return (
     <>
       {/* Основной контейнер */}
-      <div className="flex flex-col py-7 h-10/12 w-full items-center overflow-y-scroll overflow-hidden custom-scroll z-0">
-        <div className="border-2 bg-rose-50 border-green-500 p-4 rounded-2xl space-y-3 w-11/12 -translate-y-1">
-          <div className="flex -translate-y-11 translate-x-2 w-full">
+      <div className="relative flex flex-col h-full w-full items-center z-0 border-green-500 bg-rose-50 rounded-2xl">
+
+          <div className="z-10 flex -translate-y-7 translate-x-5 w-full h-full">
             {tabs.map((tab) => (
               <div
                 key={tab.id}
@@ -36,12 +39,13 @@ export default function Tab({
               </div>
             ))}
           </div>
-          <>
+
+          <div className="border h-full overflow-scroll">
             {tabs
               .find((tab) => tab.current)
-              ?.component({ data: "ldfvdfbvlml" })}
-          </>
-        </div>
+              ?.component({chore:chore})}
+          </div>
+
       </div>
     </>
   );

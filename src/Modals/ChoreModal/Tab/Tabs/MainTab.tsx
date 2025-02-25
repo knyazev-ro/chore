@@ -1,17 +1,16 @@
-export default function MainTab({data}:{data:any}) {
+import PersonCard from "../../../../PersonCard/PersonCard";
+
+export default function MainTab({chore}:{chore:any}) {
   return (
     <>
-      <div>
-        {/* Поле названия */}
-        <div className="flex flex-col">
-          <label className="text-sm font-medium">{data}</label>
-          <input
-            type="text"
-            className="mt-1 p-2 border rounded-md text-sm"
-            placeholder="Введите название"
-          />
-        </div>
+      <div className="flex p-1 gap-2 gap-y-12 items-center justify-center flex-wrap">
+        <PersonCard person={chore.created_by}/>
+        <PersonCard person={chore.created_by}/>
+        <PersonCard person={chore.created_by}/>
 
+        <PersonCard person={chore.created_by}/>
+        <PersonCard person={chore.created_by}/>
+        <PersonCard person={chore.created_by}/>
       </div>
     </>
   );
