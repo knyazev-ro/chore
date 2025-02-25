@@ -15,7 +15,7 @@ export default function Tab({
       {/* Основной контейнер */}
       <div className="relative flex flex-col h-full w-full items-center z-0 border-green-500 bg-rose-50 rounded-2xl">
 
-          <div className="z-10 flex -translate-y-7 translate-x-5 w-full h-full">
+          <div className="z-10 flex gap-1 -translate-y-7 translate-x-8 w-full h-full">
             {tabs.map((tab) => (
               <div
                 key={tab.id}
@@ -29,9 +29,9 @@ export default function Tab({
                   tab.current = true;
                 }}
                 className={
-                  "cursor-pointer h-7 border-2 border-green-500 flex px-3 py-1 comfortaa text-sm " +
+                  "cursor-pointer rounded-t-md h-7 border-2 border-green-500 flex px-3 py-1 comfortaa text-sm " +
                   (tab.current
-                    ? "text-slate-900 bg-rose-50 border-b-rose-50"
+                    ? "text-slate-900 bg-rose-50 border-b-rose-50 -ml-3 rounded-t-lg -mr-3 z-10"
                     : "bg-green-500 border-b-green-500 text-rose-50")
                 }
               >
