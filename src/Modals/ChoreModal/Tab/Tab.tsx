@@ -40,7 +40,7 @@ export default function Tab({
             ))}
           </div>
 
-          <div className="border h-full overflow-scroll">
+          <div className="flex h-full w-full -translate-y-5 py-2">
             {tabs
               .find((tab) => tab.current)
               ?.component({chore:chore})}
