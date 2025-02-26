@@ -1,4 +1,4 @@
-import PersonCard from "../../../../PersonCard/PersonCard";
+import PersonCard from "../../PersonCard/PersonCard";
 
 export default function MainTab({ chore }: { chore: any }) {
   return (

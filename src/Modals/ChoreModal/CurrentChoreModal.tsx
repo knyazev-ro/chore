@@ -1,9 +1,9 @@
 import Modal from "../Modal";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect, useRef } from "react";
-import MainTab from "./Tab/Tabs/MainTab";
-import TimeTab from "./Tab/Tabs/TimeTab";
-import Tab from "./Tab/Tab";
+import MainTab from "../../Components/Tab/Tabs/MainTab";
+import TimeTab from "../../Components/Tab/Tabs/TimeTab";
+import Tab from "../../Components/Tab/Tab";
 import AddTagPlus from "./AddTagPlus";
 import ChoreStatusCell from "../../Chore/ChoreCard/ChoreStatusCell";
 
