@@ -48,7 +48,7 @@ export default function PersonCard({ person, type }: { person: any, type:string 
                 </div>
 
                 <div 
-                className="flex items-center justify-center comfortaa w-full h-9 text-sm border-2 border-dashed border-slate-300 cursor-pointer"
+                className="transition-all duration-300 ease-in-out text-slate-400 hover:text-slate-700 flex items-center justify-center comfortaa w-full h-9 text-sm border-2 border-dashed border-slate-300 hover:border-slate-400 cursor-pointer"
                 onClick={()=> navigator.clipboard.writeText("example@exp.com")}
                 >
                 <ButtonMailto label="example@exp.com" mailto="mailto:example@exp.com" />

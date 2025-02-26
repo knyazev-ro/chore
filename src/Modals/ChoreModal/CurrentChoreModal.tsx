@@ -165,7 +165,7 @@ export default function CurrentChoreModal({
             </div>
 
             <div className="w-220 h-full p-6">
-              <div className="h-full flex border-2">
+              <div className="h-full flex">
                 <Tab
                   tabs={tabs}
                   setTabs={setTabs}
