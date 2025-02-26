@@ -1,3 +1,4 @@
+import { BrowserRouter } from "react-router-dom";
 import ChoreCard from "./Chore/ChoreCard/ChoreCard";
 import ChoreTrello from "./Chore/Trello/ChoreTrello";
 import ChoreTrelloColumn from "./Chore/Trello/ChoreTrelloColumn";
@@ -362,7 +363,10 @@ const project = {
 
   return (
     <>
+    <BrowserRouter>
+    
       <TrelloPage project={project}/>
+    </BrowserRouter>
     </>
   );
 }
