@@ -1,25 +1,43 @@
 import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement } from 'chart.js';
+import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement, Filler } from 'chart.js';
 
 // Регистрация компонентов Chart.js
-ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement);
+ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement, Filler);
 
 
 export default function TimeCard() {
 
+
+
 // <block:setup:1>
 const data = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'], // Метки на оси X
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
     {
-      label: 'shit and giggles', // Подпись к графику
-      data: [65, 59, 80, 81, 56, 55, 40], // Данные для отображения
-      borderColor: '#00C950', // Цвет линии
-      tension: 0.1, // Скругление линии
-      fill: false, // Не заполнять область под графиком
+      label: 'Dataset 1',
+      data: [420, 430, 680, 560, 790, 240, 395, 830, 810, 430, 500, 700],
+      borderColor: '#00C950',
+      borderWidth: 2,
+      fill: true,
+      backgroundColor: (context) => {
+        const chart = context.chart;
+        const { ctx, chartArea } = chart;
+        
+        // Проверка, чтобы градиент создавался только после загрузки графика
+        if (!chartArea) {
+          return null;
+        }
+
+        const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+        gradient.addColorStop(0, '#00C950');
+        gradient.addColorStop(1, 'rgba(160, 160, 255, 0)');
+
+        return gradient;
+      },
     },
   ],
 };
+
 
 
 const options = {
