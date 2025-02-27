@@ -54,7 +54,7 @@ const options = {
   scales: {
     x: {
       grid: {
-        color: '#D3D3D3', // Цвет вертикальной сетки
+        color: 'rgba(96, 207, 255, 0.4)', // Цвет вертикальной сетки
       },
       ticks: {
         color: '#FFFFFF', // Цвет подписей оси X
@@ -62,7 +62,7 @@ const options = {
     },
     y: {
       grid: {
-        color: '#D3D3D3', // Цвет горизонтальной сетки
+        color: 'rgba(96, 207, 255, 0.4)', // Цвет горизонтальной сетки
       },
       ticks: {
         color: '#FFFFFF', // Цвет подписей оси Y
@@ -74,16 +74,16 @@ const options = {
 
   return (
     <>
-      <div className="z-10 flex flex-col w-full h-full bg-slate-800 border-slate-900 p-4">
-        <div className="gap-6 w-full h-full flex items-center justify-start px-4">
+      <div className="z-10 flex flex-col w-full h-full bg-slate-900 border-slate-900 p-4">
+        <div className="gap-6 w-full h-full flex items-center justify-between px-4">
           <div className='flex flex-col h-full py-2 gap-1'>
-          <div className="min-w-20 min-h-20 bg-slate-900 rounded-full border-double border-slate-950 border-2"></div>
-          <div className='border h-full bg-slate-900'>
+          <div className="min-w-20 min-h-20 bg-slate-800 rounded-full border-double border-slate-950"></div>
+          <div className='border h-full bg-slate-800'>
 
           </div>
           </div>
 
-          <div className="flex flex-col py-4 px-2 h-48 w-full bg-slate-900 rounded-lg border-b-2 border-green-200 border-dashed">
+          <div className="flex flex-col py-2 px-4 h-52 w-full bg-slate-900 rounded-lg border-green-200 border-dashed">
           <Line data={data} options={options} />
           </div>
         </div>
