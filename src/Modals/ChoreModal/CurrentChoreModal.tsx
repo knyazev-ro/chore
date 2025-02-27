@@ -105,7 +105,7 @@ export default function CurrentChoreModal({
 
   return (
     <Modal showModal={showModal}>
-      <div className="relative w-full h-11/12 flex items-center justify-center">
+      <div className="relative w-full h-screen flex items-center justify-center">
         <div className="z-10 flex flex-col w-11/12 h-11/12 bg-slate-900 rounded-3xl border-t-3 border-l-3 border-r-3 border-sky-500 shadow-md items-center py-1 overflow-hidden">
          
           <div className="bg-slate-800 h-16 border-green-500 flex items-center justify-between px-4 py-2 w-full z-1">
