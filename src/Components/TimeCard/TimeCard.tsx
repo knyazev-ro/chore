@@ -8,6 +8,26 @@ ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale
 export default function TimeCard() {
 
 
+  const grad = (context, grad1, grad2) => {
+    const chart = context.chart;
+    const { ctx, chartArea } = chart;
+    
+    // Проверка, чтобы градиент создавался только после загрузки графика
+    if (!chartArea) {
+      return null;
+    }
+
+    const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+    gradient.addColorStop(0, grad1);
+    gradient.addColorStop(1, grad2);
+
+    return gradient;
+  }
+
+  const gradIntegral = (context) => grad(context, "#16a436", "rgba(0, 137, 152, 0.4)")
+  
+  const gradLine = (context) => grad(context, "rgba(61, 255, 60, 1)", "rgba(61, 200, 255, 1)")
+  
 
 // <block:setup:1>
 const data = {
@@ -16,24 +36,12 @@ const data = {
     {
       label: 'Dataset 1',
       data: [420, 430, 680, 560, 790, 240, 395, 830, 810, 430, 500, 700],
-      borderColor: '#00C950',
+      borderColor: gradLine,
+      tension: 0.4,
       borderWidth: 2,
       fill: true,
-      backgroundColor: (context) => {
-        const chart = context.chart;
-        const { ctx, chartArea } = chart;
-        
-        // Проверка, чтобы градиент создавался только после загрузки графика
-        if (!chartArea) {
-          return null;
-        }
-
-        const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
-        gradient.addColorStop(0, '#00C950');
-        gradient.addColorStop(1, 'rgba(160, 160, 255, 0)');
-
-        return gradient;
-      },
+      backgroundColor: gradIntegral,
+    
     },
   ],
 };
