@@ -19,12 +19,12 @@ export default function PersonCard({ person, type }: { person: any, type:string 
     return (
     <>
       <div className="relative flex flex-col">
-        <div className="z-30 rounded-sm relative w-48 h-72 border-2 bg-rose-50 border-green-500 flex flex-col gap-2">
+        <div className="z-30 rounded-sm relative w-full h-full border-2 bg-rose-50 border-green-500 flex flex-col gap-2">
           <div className="p-4 flex flex-col w-full h-full items-center justify-center">
             <div className="relative flex flex-col items-center">
             <img
               key={"created_by"}
-              className="border-3 border-green-500 bg-green-500 w-28 h-28 min-w-28 min-h-28 rounded-full"
+              className="border-3 border-green-500 bg-green-500 w-full h-full min-w-full min-h-full rounded-full"
               src={person}
               alt="Avatar"
             />
@@ -64,10 +64,10 @@ export default function PersonCard({ person, type }: { person: any, type:string 
           </div>
         </div>
 
-        <div className="z-20 -translate-1 rounded-sm absolute w-48 h-72 border-2 bg-rose-50 border-green-500"></div>
-        <div className="z-10 -translate-2 rounded-sm absolute w-48 h-72 border-2 bg-rose-50 border-green-500"></div>
+        <div className="z-20 -translate-1 rounded-sm absolute w-full h-full border-2 bg-rose-50 border-green-500"></div>
+        <div className="z-10 -translate-2 rounded-sm absolute w-full h-full border-2 bg-rose-50 border-green-500"></div>
 
-        <div className="-translate-3 rounded-sm absolute w-48 h-72 border-2 bg-rose-50 border-green-500">
+        <div className="-translate-3 rounded-sm absolute w-full h-full border-2 bg-rose-50 border-green-500">
             
             <div className="relative">
                 
@@ -77,18 +77,18 @@ export default function PersonCard({ person, type }: { person: any, type:string 
             </div>
           </div>
 
-          <div className="absolute w-2/6 h-full bg-sky-300 border-2 border-slate-950 rounded-sm flex justify-center items-start -translate-x-7 translate-y-50 rotate-270">
+          {/* <div className="absolute w-2/6 h-full bg-sky-300 border-2 border-slate-950 rounded-sm flex justify-center items-start -translate-x-7 translate-y-50 rotate-270"> */}
             {/* <div className="-translate-y-0.5 text-[10px] comfortaa">
               {"person"}
             </div> */}
-          </div>
+          {/* </div> */}
 
             </div>
 
           
         </div>
 
-        <div className="flex z-10 -translate-y-4 -translate-x-6 absolute w-48 h-72 justify-end">
+        <div className="flex z-10 -translate-y-4 -translate-x-6 absolute w-full h-full justify-end">
           <div className="w-2/6 h-full bg-rose-500 border-2 border-slate-950 rounded-sm flex justify-center items-start">
             <div className="-translate-y-0.5 text-[10px] comfortaa">
               {"chore"}

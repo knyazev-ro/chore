@@ -54,17 +54,25 @@ const options = {
   scales: {
     x: {
       grid: {
+        drawBorder:false,
+        drawOnChartArea: true, // Рисовать линии на области графика
+        drawTicks: false, // Не рисовать деления
         color: 'rgba(96, 207, 255, 0.4)', // Цвет вертикальной сетки
       },
       ticks: {
+        stepSize:70,
         color: '#FFFFFF', // Цвет подписей оси X
       },
     },
     y: {
       grid: {
+        drawBorder:false,
+        drawOnChartArea: true, // Рисовать линии на области графика
+        drawTicks: false, // Не рисовать деления
         color: 'rgba(96, 207, 255, 0.4)', // Цвет горизонтальной сетки
       },
       ticks: {
+        stepSize:70,
         color: '#FFFFFF', // Цвет подписей оси Y
       },
     },

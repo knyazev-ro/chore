@@ -41,7 +41,7 @@ export default function Tab({
         </div>
 
         {/* Контент вкладки */}
-        <div className="flex-grow h-full w-full absolute overflow-auto">
+        <div className="flex-grow h-full w-full absolute">
           {tabs.find((tab) => tab.current)?.component({ chore: chore })}
         </div>
 
