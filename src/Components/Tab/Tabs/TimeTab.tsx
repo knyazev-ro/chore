@@ -22,14 +22,26 @@ export default function TimeTab() {
     <>
       <div className="flex flex-col h-full overflow-hidden">
         <div className="flex flex-col w-full rounded-2xl h-screen overflow-auto custom-scroll">
-          <div ref={section1Ref} className="flex flex-col">
+          <div ref={section1Ref} className="flex flex-col h-screen">
+            <div className="h=screen">
+
             <TimeCard />
+            </div>
+
+            <div className="h-screen">
+
             <AdditionalTimeInfo />
+            </div>
             {/* <TimeCard/> */}
           </div>
-          <div ref={section2Ref} className="flex flex-col">
+          <div ref={section2Ref} className="flex flex-col h-screen">
+            <div className="h-screen">
             <TimeCard />
+            </div>
+            <div className="h-screen">
+
             <AdditionalTimeInfo />
+            </div>
             {/* <TimeCard/> */}
           </div>
         </div>
