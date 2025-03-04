@@ -278,48 +278,56 @@ const getRandomChores = (count) => {
 
 const columns = [
   {
+    id:0,
     title: "Важное",
     items: getRandomChores(3),
     bg_color: '#D1E8FF',
     title_color: '#1DA1F2',
   },
   {
+    id:1,
     title: "Не очень важное",
     items: getRandomChores(2),
     bg_color: '#E2F1FA',
     title_color: '#657786',
   },
   {
+    id:2,
     title: "В процессе",
     items: getRandomChores(5),
     bg_color: '#FFF1D4',
     title_color: '#FFAD1F',
   },
   {
+    id:3,
     title: "Завершено",
     items: getRandomChores(3),
     bg_color: '#D9F0D7',
     title_color: '#17BF63',
   },
   {
+    id: 4,
     title: "Ожидание",
     items: getRandomChores(2),
     bg_color: '#FEE2D6',
     title_color: '#E0245E',
   },
   {
+    id:5,
     title: "Срочно!",
     items: getRandomChores(2),
     bg_color: '#FFD1D1',
     title_color: '#E0245E',
   },
   {
+    id:6,
     title: "Может подождать",
     items: getRandomChores(2),
     bg_color: '#D8E3E9',
     title_color: '#8899A6',
   },
   {
+    id:7,
     title: "Архив",
     items: getRandomChores(2),
     bg_color: '#E9E9F3',

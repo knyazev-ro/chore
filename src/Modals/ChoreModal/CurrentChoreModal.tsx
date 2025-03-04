@@ -6,6 +6,7 @@ import TimeTab from "../../Components/Tab/Tabs/TimeTab";
 import Tab from "../../Components/Tab/Tab";
 import AddTagPlus from "./AddTagPlus";
 import ChoreStatusCell from "../../Chore/ChoreCard/ChoreStatusCell";
+import StatusLine from "../../Components/StatusLine/StatusLine";
 
 export default function CurrentChoreModal({
   setShowModal,
@@ -103,14 +104,75 @@ export default function CurrentChoreModal({
     });
   }, [showModal]);
 
+
+  const columns = [
+    {
+      id: 0,
+      title: "Важное",
+      bg_color: '#D1E8FF',
+      title_color: '#1DA1F2',
+      order: 0,
+    },
+    {
+      id: 1,
+      title: "Не очень важное",
+      bg_color: '#E2F1FA',
+      title_color: '#657786',
+      order: 1,
+    },
+    {
+      id: 2,
+      title: "В процессе",
+      bg_color: '#FFF1D4',
+      title_color: '#FFAD1F',
+      order: 2,
+    },
+    {
+      id: 3,
+      title: "Завершено",
+      bg_color: '#D9F0D7',
+      title_color: '#17BF63',
+      order: 3,
+    },
+    {
+      id: 4,
+      title: "Ожидание",
+      bg_color: '#FEE2D6',
+      title_color: '#E0245E',
+      order: 4,
+    },
+    {
+      id: 5,
+      title: "Срочно!",
+      bg_color: '#FFD1D1',
+      title_color: '#E0245E',
+      order: 5,
+    },
+    {
+      id: 6,
+      title: "Может подождать",
+      bg_color: '#D8E3E9',
+      title_color: '#8899A6',
+      order: 6,
+    },
+    {
+      id: 7,
+      title: "Архив",
+      bg_color: '#E9E9F3',
+      title_color: '#AAB8C2',
+      order: 7,
+    },
+  ];
+
   return (
     <Modal showModal={showModal}>
       <div className="relative w-full h-screen flex items-center justify-center">
         <div className="z-10 flex flex-col w-11/12 h-11/12 bg-slate-900 rounded-3xl border-t-3 border-l-3 border-r-3 border-sky-500 shadow-md items-center py-1 overflow-hidden">
          
           <div className="bg-slate-800 h-16 border-green-500 flex items-center justify-between px-4 py-2 w-full z-1">
-            <div className="w-32">
+            <div className="flex gap-2 items-center w-72">
               <ChoreStatusCell value={singleChore} />
+              <StatusLine chore={singleChore} columns={columns}/>
             </div>
             <div className="rounded-2xl border-double px-4 py-1 border-4 border-green-500 comfortaa text-rose-50">
               {!isNew || [...singleChore.title].length > 1
@@ -118,7 +180,7 @@ export default function CurrentChoreModal({
                 : "Создать чор"}
             </div>
 
-            <div className="w-32 flex justify-end">
+            <div className="w-72 flex justify-end">
               <div
                 className="w-9 h-9 bg-slate-50 rounded-full flex items-center justify-center cursor-pointer"
                 onClick={() => setShowModal(false)}
