@@ -17,13 +17,18 @@ export default function StatusLine({ columns, chore }) {
             return (
               <>
                 <div
-                  className="bg-green-500 w-10 h-full"
+                  className="relative bg-green-500 w-10 h-full cursor-pointer group flex items-center justify-center"
                   style={{
                     backgroundColor: e.current
                       ? e?.bg_color ?? "#00C950"
                       : "#F8FAFC",
-                  }}
-                ></div>
+                  }
+                }
+                >
+                    <div className="flex items-center justify-center p-2 text-rose-50 comfortaa text-[10px] fixed z-10 bg-slate-950 -translate-6 rounded-2xl opacity-0 group-hover:opacity-90 transition-opacity duration-300 ease-in-out">
+                        {e.title}
+                    </div>
+                </div>
               </>
             );
           })}

@@ -7,6 +7,7 @@ import Tab from "../../Components/Tab/Tab";
 import AddTagPlus from "./AddTagPlus";
 import ChoreStatusCell from "../../Chore/ChoreCard/ChoreStatusCell";
 import StatusLine from "../../Components/StatusLine/StatusLine";
+import TimePing from "../../Components/TimePing.tsx/TimePing";
 
 export default function CurrentChoreModal({
   setShowModal,
@@ -180,7 +181,8 @@ export default function CurrentChoreModal({
                 : "Создать чор"}
             </div>
 
-            <div className="w-72 flex justify-end">
+            <div className="w-72 flex justify-end gap-4">
+              <TimePing durationTime={singleChore.durationTime} estimationTime={singleChore.estimationTime}/>
               <div
                 className="w-9 h-9 bg-slate-50 rounded-full flex items-center justify-center cursor-pointer"
                 onClick={() => setShowModal(false)}
