@@ -23,12 +23,12 @@ export default function PersonCard({
 
   return (
     <div className="relative flex flex-col w-full h-full">
-      <div className="z-30 rounded-sm relative w-full h-full border-2 bg-rose-50 border-green-500 flex flex-col">
+      <div className="z-30 relative w-full h-full bg-rose-50  border-3 flex flex-col">
         <div className="flex flex-col py-4 items-center justify-center">
           <div className="min-w-20 min-h-20 h-20 w-20 max-w-20 max-h-20">
             <img
               key={"created_by"}
-              className="border-3 border-green-500 bg-green-500 w-full h-full min-w-full min-h-full rounded-full"
+              className="border-3 border-rose-50 bg-blue-500 w-full h-full min-w-full min-h-full rounded-full"
               src={person}
               alt="Avatar"
             />
@@ -41,15 +41,15 @@ export default function PersonCard({
 
           <div className="px-1 flex flex-col w-full h-full">
             <div className="flex flex-col gap-1">
-              <div className="flex items-center justify-center comfortaa w-full border-b-2 border-slate-500 p-1">
+              <div className="flex items-center justify-center comfortaa w-full border-b-2 border-slate-500 p-1 text-black">
                 {"Мистер Майлз"}
               </div>
-              <div className="flex items-center justify-center comfortaa w-full">
+              <div className="flex items-center justify-center comfortaa w-full text-black">
                 {type}
               </div>
 
               <div
-                className="transition-all duration-300 ease-in-out text-slate-400 hover:text-slate-700 flex items-center justify-center comfortaa w-full h-9 text-sm border-2 border-dashed border-slate-300 hover:border-slate-400 cursor-pointer"
+                className="transition-all duration-300 ease-in-out text-blue-950 hover:text-blue-950 flex items-center justify-center comfortaa w-full h-9 text-sm border-2 border-dashed border-orange-500 hover:border-slate-400 cursor-pointer"
                 onClick={() => navigator.clipboard.writeText("example@exp.com")}
               >
                 <ButtonMailto
@@ -67,12 +67,12 @@ export default function PersonCard({
         </div>
       </div>
 
-      <div className="z-20 -translate-1 rounded-sm absolute w-full h-full border-2 bg-rose-50 border-green-500"></div>
-      <div className="z-10 -translate-2 rounded-sm absolute w-full h-full border-2 bg-rose-50 border-green-500"></div>
+      <div className="z-20 -translate-1  absolute w-full h-full border-3 bg-rose-50 "></div>
+      <div className="z-10 -translate-2 absolute w-full h-full border-3 bg-rose-50 "></div>
 
-      <div className="-translate-3 rounded-sm absolute w-full h-full border-2 bg-rose-50 border-green-500">
+      <div className="-translate-3 absolute w-full h-full border-3 bg-rose-50">
         <div className="relative">
-          <div className="w-2/6 h-full bg-green-300 border-2 border-slate-950 rounded-sm flex justify-center items-start translate-x-4 -translate-y-2">
+          <div className="w-2/6 h-full bg-blue-300 border-2 border-slate-950 rounded-sm flex justify-center items-start translate-x-4 -translate-y-2">
             <div className="-translate-y-0.5 text-[10px] comfortaa">
               {"person"}
             </div>

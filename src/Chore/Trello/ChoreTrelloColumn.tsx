@@ -10,7 +10,7 @@ export default function ChoreTrelloColumn({ column, handleClickPlusButton }: { c
         className="group flex flex-col min-w-80 border-3 border-green-300 bg-green-300 backdrop-blur-md hover:bg-white/20 transition-all duration-300 relative h-screen overflow-scroll custom-scroll"
         style={{ backgroundColor: bg_color, borderColor: bg_color }}
       >
-        <div className="sticky z-20 top-0 bg-slate-900 min-h-12 flex items-center justify-between rounded-b-2xl px-4">
+        <div className="sticky z-20 top-0 bg-stone-950 min-h-12 flex items-center justify-between px-4">
           <div>
             <EllipsisHorizontalIcon className="h-6 w-6 text-rose-50 cursor-pointer" />
           </div>

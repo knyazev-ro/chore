@@ -47,13 +47,13 @@ export default function TimeTab() {
         </div>
         <div className="bottom-0 flex items-center justify-center w-full absolute z-10 translate-y-3">
           <button
-            className="w-16 h-7 rounded-2xl bg-slate-800 border-green-700 border-2 flex items-center justify-center"
+            className="w-16 h-7 rounded-2xl bg-slate-800 border-blue-700 border-2 flex items-center justify-center"
             onClick={scrollToNextSection}
           >
             {scrollDirection.current === "up" ? (
-              <ArrowUpIcon className="w-5 h-5 text-green-700" />
+              <ArrowUpIcon className="w-5 h-5 text-blue-700" />
             ) : (
-              <ArrowDownIcon className="w-5 h-5 text-green-700" />
+              <ArrowDownIcon className="w-5 h-5 text-blue-700" />
             )}
           </button>
         </div>

@@ -25,9 +25,9 @@ export default function Linear({linearData}:{linearData:Array<any>})
     return gradient;
   }
 
-  const gradIntegral = (context) => grad(context, "#16a436", "rgba(0, 137, 152, 0.4)")
+  const gradIntegral = (context) => grad(context, "#2B7FFF", "rgba(0, 137, 152, 0.4)")
   
-  const gradLine = (context) => grad(context, "rgba(61, 255, 60, 1)", "rgba(61, 200, 255, 1)")
+  const gradLine = (context) => grad(context, "rgba(61, 255, 255, 1)", "rgba(61, 200, 255, 1)")
   
 
 // <block:setup:1>

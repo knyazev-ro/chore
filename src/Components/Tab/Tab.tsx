@@ -11,8 +11,9 @@ export default function Tab({
 }) {
   return (
     <>
+    <div className="flex relative w-full h-full">
       {/* Основной контейнер */}
-      <div className="relative flex flex-col min-h-0 h-full w-full items-center z-0 border-green-500 rounded-2xl border-2 bg-slate-950">
+      <div className="z-10 relative flex flex-col min-h-0 h-full w-full items-center border-black border-3 bg-stone-950">
 
         {/* Вкладки */}
         <div className="z-10 flex gap-1 -translate-y-8 translate-x-8 w-full h-8">
@@ -29,10 +30,10 @@ export default function Tab({
                 tab.current = true;
               }}
               className={
-                "cursor-pointer rounded-t-md h-full border-2 border-green-500 flex px-3 py-1 comfortaa text-sm " +
+                "cursor-pointer h-full border-3 border-black flex px-3 py-1 comfortaa text-sm " +
                 (tab.current
-                  ? "text-slate-900 bg-rose-50 border-b-rose-50 -ml-3 rounded-t-lg -mr-3 z-10"
-                  : "bg-green-500 border-b-green-500 text-rose-50")
+                  ? "text-slate-900 bg-rose-50 border-b-rose-50 -ml-3 -mr-3 z-10"
+                  : "bg-blue-600 border-b-blue-800 text-rose-50")
               }
             >
               {tab.title}
@@ -46,6 +47,8 @@ export default function Tab({
         </div>
 
       </div>
+      <div className="absolute flex flex-col min-h-0 h-full w-full items-center border-black border-3 bg-blue-600 translate-1.5"></div>
+    </div>
     </>
   );
 }

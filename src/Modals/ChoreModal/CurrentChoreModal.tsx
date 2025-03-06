@@ -8,6 +8,7 @@ import AddTagPlus from "./AddTagPlus";
 import ChoreStatusCell from "../../Chore/ChoreCard/ChoreStatusCell";
 import StatusLine from "../../Components/StatusLine/StatusLine";
 import TimePing from "../../Components/TimePing.tsx/TimePing";
+import DataTab from "../../Components/Tab/Tabs/DataTab";
 
 export default function CurrentChoreModal({
   setShowModal,
@@ -45,9 +46,9 @@ export default function CurrentChoreModal({
     },
     {
       id: 3,
-      title: "Дополнительно",
+      title: "Диск",
       current: false,
-      component: MainTab,
+      component: DataTab,
     },
     {
       id: 4,
@@ -168,17 +169,17 @@ export default function CurrentChoreModal({
   return (
     <Modal showModal={showModal}>
       <div className="relative w-full h-screen flex items-center justify-center">
-        <div className="z-10 flex flex-col w-11/12 h-11/12 bg-slate-900 rounded-3xl border-t-3 border-l-3 border-r-3 border-sky-500 shadow-md items-center py-1 overflow-hidden">
+        <div className="z-10 flex flex-col w-11/12 h-11/12 bg-stone-100 border-t-4 border-l-4 border-r-4 border-black shadow-md items-center overflow-hidden">
          
-          <div className="bg-slate-800 h-16 border-green-500 flex items-center justify-between px-4 py-2 w-full z-1">
+          <div className="bg-blue-600 border-b-3 h-16 flex items-center justify-between px-4 py-2 w-full z-1">
             <div className="flex gap-2 items-center w-72">
               <ChoreStatusCell value={singleChore} />
               <StatusLine chore={singleChore} columns={columns}/>
             </div>
-            <div className="rounded-2xl border-double px-4 py-1 border-4 border-green-500 comfortaa text-rose-50">
-              {!isNew || [...singleChore.title].length > 1
+            <div className=" border-double px-4 py-1 border-4 comfortaa text-rose-50">
+              {/* {!isNew || [...singleChore.title].length > 1
                 ? singleChore.title
-                : "Создать чор"}
+                : "Создать чор"} */}
             </div>
 
             <div className="w-72 flex justify-end gap-4">
@@ -196,9 +197,12 @@ export default function CurrentChoreModal({
 
 
           {/* Основной контейнер */}
-          <div className="flex gap-1 w-full h-full bg-slate-900 rounded-2xl justify-between">
-            <div className="flex flex-col w-1/2 h-full p-6 gap-2">
-              <div className="flex-col bg-white border-2 border-green-500 rounded-2xl h-full flex p-2">
+          <div className="flex gap-1 w-full h-full bg-stone-100 justify-between">
+            <div className="relative flex flex-col w-1/2 h-full p-6 gap-2">
+              <div className="relative flex-col  border-3 h-full flex">
+                <div className="z-10 flex flex-col bg-white justify-between h-full p-3">
+
+
                 <textarea
                   className="bg-white comfortaa text-2xl border-b-2 p-3 border-b-slate-300 focus:outline-none text-slate-800 placeholder-gray-300 custom-scroll min-h-20 max-h-32 h-20"
                   value={singleChore.title}
@@ -225,6 +229,8 @@ export default function CurrentChoreModal({
                     setSingleChore={setSingleChore}
                   />
                 </div>
+                </div>
+              <div className="absolute bg-blue-600 border-3 h-full w-full translate-2"></div>
               </div>
             </div>
 
@@ -241,9 +247,9 @@ export default function CurrentChoreModal({
           </div>
         </div>
           </div>
-        <div className="absolute flex flex-col w-11/12 h-11/12 translate-y-1 rounded-3xl shadow-md overflow-hidden">
+        <div className="absolute flex flex-col w-11/12 h-11/12 translate-y-2 shadow-md overflow-hidden border-4">
           <div
-            className="h-full bg-sky-500 animate-pulse"
+            className="h-full bg-blue-600 animate-pulse"
             style={{ width: `${widthPercentage}%` }}
           ></div>
         </div>
