@@ -18,7 +18,7 @@ export default function AdditionalTimeInfo() {
             <div className="flex w-20 h-20 bg-stone-950 rounded-full"></div>
 
           </div>
-          <div className="w-56 h-56 p-2 -translate-y-14">
+          <div className="w-56 h-56 p-2 -translate-y-15">
             <Doughnut doughData={[]} />
           </div>
         </div>
