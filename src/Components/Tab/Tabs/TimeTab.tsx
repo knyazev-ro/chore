@@ -45,9 +45,9 @@ export default function TimeTab() {
             {/* <TimeCard/> */}
           </div>
         </div>
-        <div className="bottom-0 flex items-center justify-center w-full absolute z-10 translate-y-3">
+        <div className="bottom-0 flex items-center justify-center w-full absolute z-10 translate-y-4">
           <button
-            className="w-16 h-7 rounded-2xl bg-slate-800 border-blue-700 border-2 flex items-center justify-center"
+            className="w-16 h-6 bg-slate-800 border-blue-700 border-2 flex items-center justify-center"
             onClick={scrollToNextSection}
           >
             {scrollDirection.current === "up" ? (

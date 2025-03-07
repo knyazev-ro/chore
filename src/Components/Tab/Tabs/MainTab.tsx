@@ -45,7 +45,7 @@ export default function MainTab({ chore }: { chore: any }) {
 
       {/* last to append */}
       <div className="relative w-48 h-64">
-      <div className="z-10 bg-blue-500 absolute w-48 h-64 border-3 border-dashed  flex justify-center items-center hover:bg-blue-300 transition-all ease-in-out duration-300">
+      <div className="z-10 bg-blue-500 absolute w-48 h-64 border-white border-3 border-dashed  flex justify-center items-center hover:bg-blue-300 transition-all ease-in-out duration-300">
         
         <PlusIcon
           className="w-16 h-16"
@@ -53,7 +53,7 @@ export default function MainTab({ chore }: { chore: any }) {
           strokeWidth={1.2} />
         </div>
 
-          <div className="absolute w-48 h-64 -translate-2 border-black border-dashed border-3"></div>
+          <div className="absolute w-48 h-64 -translate-2 border-white border-dashed border-3"></div>
  </div>
     </div>
   );

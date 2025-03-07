@@ -23,7 +23,7 @@ export default function PersonCard({
 
   return (
     <div className="relative flex flex-col w-full h-full">
-      <div className="z-30 relative w-full h-full bg-rose-50  border-3 flex flex-col">
+      <div className="z-30 relative w-full h-full bg-yellow-50  border-3 flex flex-col">
         <div className="flex flex-col py-4 items-center justify-center">
           <div className="min-w-20 min-h-20 h-20 w-20 max-w-20 max-h-20">
             <img
