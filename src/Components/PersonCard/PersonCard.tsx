@@ -28,18 +28,18 @@ export default function PersonCard({
           <div className="flex relative min-w-20 min-h-25 h-25 w-25 max-w-25 max-h-25 items-center justify-center">
             <img
               key={"created_by"}
-              className="z-10 border-3 border-stone-950 bg-blue-500 w-5/6 h-5/6 min-w-5/6 min-h-5/6"
+              className="z-10 border-3 border-stone-950 bg-blue-500 w-11/12 h-11/12 min-w-11/12 min-h-11/12"
               src={person}
               alt="Avatar"
             />
             <div className="absolute border-3 flex flex-col border-stone-950 bg-blue-500 w-full h-full min-w-full min-h-full">
-              <div className="h-1/3 w-full bg-stone-400"></div>
-              <div className="h-1/3 w-full bg-stone-300"></div>
-              <div className="h-1/3 w-full bg-stone-400"></div>
+            <div className="h-1/6  bg-blue-500"></div>
+              <div className="h-1/6  bg-yellow-500"></div>
+              <div className="h-1/6  bg-rose-500"></div>
 
-              <div className="h-1/3 w-full bg-stone-300"></div>
-              <div className="h-1/3 w-full bg-stone-400"></div>
-              <div className="h-1/3 w-full bg-stone-300"></div>
+              <div className="h-1/6  bg-blue-500"></div>
+              <div className="h-1/6  bg-yellow-500"></div>
+              <div className="h-1/6  bg-rose-500"></div>
             </div>
           </div>
           <div className="relative -translate-y-3 translate-x-11 flex items-center justify-center z-20">
@@ -85,10 +85,10 @@ export default function PersonCard({
         </div>
       </div>
 
-      <div className="z-20 -translate-1  absolute w-full h-full border-3 bg-rose-50 "></div>
-      <div className="z-10 -translate-2 absolute w-full h-full border-3 bg-rose-50 "></div>
+      <div className="z-20 -translate-1  absolute w-full h-full border-3 bg-stone-400 "></div>
+      <div className="z-10 -translate-2 absolute w-full h-full border-3 bg-stone-400 "></div>
 
-      <div className="-translate-3 absolute w-full h-full border-3 bg-rose-50">
+      <div className="-translate-3 absolute w-full h-full border-3 bg-stone-400">
         <div className="relative">
           <div className="w-2/6 h-full bg-blue-300 border-2 border-slate-950 rounded-sm flex justify-center items-start translate-x-4 -translate-y-2">
             <div className="-translate-y-0.5 text-[10px] comfortaa">

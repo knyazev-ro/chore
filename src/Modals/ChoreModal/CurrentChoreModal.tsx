@@ -9,6 +9,8 @@ import ChoreStatusCell from "../../Chore/ChoreCard/ChoreStatusCell";
 import StatusLine from "../../Components/StatusLine/StatusLine";
 import TimePing from "../../Components/TimePing.tsx/TimePing";
 import DataTab from "../../Components/Tab/Tabs/DataTab";
+import { Cog6ToothIcon } from "@heroicons/react/24/solid";
+import { PaintBrushIcon } from "@heroicons/react/24/solid";
 
 export default function CurrentChoreModal({
   setShowModal,
@@ -176,10 +178,13 @@ export default function CurrentChoreModal({
               <ChoreStatusCell value={singleChore} />
               <StatusLine chore={singleChore} columns={columns}/>
             </div>
-            <div className=" border-double px-4 py-1 border-4 comfortaa text-rose-50">
+            <div className="flex border-double px-4 gap-2 py-1 border-4 comfortaa text-rose-50">
               {/* {!isNew || [...singleChore.title].length > 1
                 ? singleChore.title
                 : "Создать чор"} */}
+                <Cog6ToothIcon className="w-6 h-6 text-white" />
+                <XMarkIcon className="w-6 h-6 text-white stroke-4" />
+                <PaintBrushIcon className="w-6 h-6 text-white" />
             </div>
 
             <div className="w-72 flex justify-end gap-4">

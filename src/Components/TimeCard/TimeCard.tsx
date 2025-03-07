@@ -5,7 +5,7 @@ export default function TimeCard() {
   return (
     <div className="z-10 flex flex-col w-full h-full bg-stone-950 border-stone-900 p-4">
       <div className="gap-6 w-full h-full flex items-center justify-between p-2">
-        <div className="translate-x-2 w-46 h-62">
+        <div className="translate-x-2 w-52 h-62">
           <PersonCard person="" type="Creator" />
         </div>
 

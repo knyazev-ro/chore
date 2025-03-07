@@ -3,7 +3,7 @@ import PersonCard from "../../PersonCard/PersonCard";
 
 export default function MainTab({ chore }: { chore: any }) {
   return (
-    <div className="flex flex-wrap gap-8 gap-y-14 items-center justify-center h-full overflow-x-scroll custom-scroll p-8">
+    <div className="flex flex-wrap gap-8 gap-y-14 items-center justify-center h-full overflow-x-scroll custom-scroll p-8 border-3 border-white">
      
       <div className="w-48 h-64">
       <PersonCard person={chore.createdBy} type={"Creator"} />
@@ -45,7 +45,7 @@ export default function MainTab({ chore }: { chore: any }) {
 
       {/* last to append */}
       <div className="relative w-48 h-64">
-      <div className="z-10 bg-blue-500 absolute w-48 h-64 border-white border-3 border-dashed  flex justify-center items-center hover:bg-blue-300 transition-all ease-in-out duration-300">
+      <div className="z-10 bg-stone-950 absolute w-48 h-64 border-white border-3 border-dashed  flex justify-center items-center hover:bg-stone-800 transition-all ease-in-out duration-300">
         
         <PlusIcon
           className="w-16 h-16"
