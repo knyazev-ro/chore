@@ -19,7 +19,8 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import {
   PencilIcon,
   TrashIcon,
-  PaperClipIcon
+  PaperClipIcon,
+  ClipboardDocumentIcon
 } from '@heroicons/react/16/solid'
 
 export default function CurrentChoreModal({
@@ -215,15 +216,19 @@ export default function CurrentChoreModal({
               <MenuItems className={"comfortaa absolute translate-y-10.5 w-60 bg-stone-100/95 backdrop-blur-3xl p-2 flex flex-col gap-2 border-3"}>
               
               <MenuItem>
-              <div className="hover:bg-stone-950/95 hover:border-stone-100/50 active:bg-stone-100/50 active:text-stone-200/50 transition-all duration-300 ease-in-out active:border-stone-200/50 hover:text-stone-100 group flex justify-between items-center border-2 px-2 py-1">Копировать <div><PaperClipIcon className="size-4 fill-stone-950 group-hover:fill-stone-100 group-active:fill-stone-200"/></div></div>
+              <div className="cursor-pointer active:translate-x-10 hover:bg-stone-950/95 hover:border-stone-100/50 active:bg-stone-100/50 active:text-stone-200/50 transition-all duration-400 ease-in-out active:border-stone-200/50 hover:text-stone-100 group flex justify-between items-center border-2 px-2 py-1">Копировать <div><ClipboardDocumentIcon className="size-4 fill-stone-950 group-hover:fill-stone-100 group-active:fill-stone-200"/></div></div>
               </MenuItem>
 
               <MenuItem>
-              <div className="hover:bg-stone-950/95 hover:border-stone-100/50 active:bg-stone-100/50 active:text-stone-200/50 transition-all duration-300 ease-in-out active:border-stone-200/50 hover:text-stone-100 group flex justify-between items-center border-2 px-2 py-1">Создать подзадачу <div><PencilIcon className="size-4 fill-stone-950 group-hover:fill-stone-100 group-active:fill-stone-200"/></div></div>
+              <div className="cursor-pointer active:translate-x-10 hover:bg-stone-950/95 hover:border-stone-100/50 active:bg-stone-100/50 active:text-stone-200/50 transition-all duration-400 ease-in-out active:border-stone-200/50 hover:text-stone-100 group flex justify-between items-center border-2 px-2 py-1">Создать подзадачу <div><PencilIcon className="size-4 fill-stone-950 group-hover:fill-stone-100 group-active:fill-stone-200"/></div></div>
               </MenuItem>
 
               <MenuItem>
-              <div className="hover:bg-stone-950/95 hover:border-stone-100/50 active:bg-stone-100/50 active:text-stone-200/50 transition-all duration-300 ease-in-out active:border-stone-200/50 hover:text-stone-100 group flex justify-between items-center border-2 px-2 py-1">Удалить <div><TrashIcon className="size-4 fill-stone-950 group-hover:fill-stone-100 group-active:fill-stone-200"/></div></div>
+              <div className="cursor-pointer active:translate-x-10 hover:bg-stone-950/95 hover:border-stone-100/50 active:bg-stone-100/50 active:text-stone-200/50 transition-all duration-400 ease-in-out active:border-stone-200/50 hover:text-stone-100 group flex justify-between items-center border-2 px-2 py-1">Поделиться <div><PaperClipIcon className="size-4 fill-stone-950 group-hover:fill-stone-100 group-active:fill-stone-200"/></div></div>
+              </MenuItem>
+
+              <MenuItem>
+              <div className="cursor-pointer active:translate-x-10 hover:bg-stone-950/95 hover:border-stone-100/50 active:bg-stone-100/50 active:text-stone-200/50 transition-all duration-400 ease-in-out active:border-stone-200/50 hover:text-stone-100 group flex justify-between items-center border-2 px-2 py-1">Удалить <div><TrashIcon className="size-4 fill-stone-950 group-hover:fill-stone-100 group-active:fill-stone-200"/></div></div>
               </MenuItem>
               
               </MenuItems>

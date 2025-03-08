@@ -16,7 +16,7 @@ export default function ChoreCardAlt() {
     ]
 
   return (
-    <div className="cursor-pointer hover:scale-102 transition-all duration-300 ease-in-out flex relative w-40 h-52 border-3 border-stone-950 bg-stone-200">
+    <div className="cursor-pointer hover:scale-102 active:-translate-y-1 transition-all duration-300 ease-in-out flex relative w-40 h-52 border-3 border-stone-950 bg-stone-200">
 
     <div className="w-full h-full p-2 translate-1 comfortaa flex flex-col justify-between">
        <div className="w-full flex">
