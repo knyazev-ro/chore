@@ -44,7 +44,7 @@ export default function CommentCard({
                         ))}
                     </div>
                   )}
-                  <div className="">{e.reaction}</div>
+                  <div className="text-lg">{e.reaction}</div>
                 </div>
               ))}
             </div>
