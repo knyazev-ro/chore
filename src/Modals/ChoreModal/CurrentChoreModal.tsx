@@ -183,13 +183,17 @@ export default function CurrentChoreModal({
             <div className="flex border-double px-4 gap-2 py-1 border-4 border-blue-700 comfortaa text-rose-50 bg-stone-100">
               {/* {!isNew || [...singleChore.title].length > 1
                 ? singleChore.title
-                : "Создать чор"} */}
+                : "Создать чор"} */
+                }
                 <Cog6ToothIcon className="w-6 h-6 text-blue-500" />
                 <XMarkIcon className="w-6 h-6 text-yellow-500 stroke-4" />
                 <PaintBrushIcon className="w-6 h-6 text-rose-500" />
             </div>
 
-            <div className="w-72 flex justify-end gap-4">
+            <div className="w-72 flex justify-end items-center gap-4">
+              <div className="relative w-16 h-7 border-3 bg-blue-700">
+                <div className="absolute w-full h-full bg-stone-950 -z-10 translate-1.5"></div>
+              </div>
               <TimePing durationTime={singleChore.durationTime} estimationTime={singleChore.estimationTime}/>
               <div
                 className="w-9 h-9 bg-slate-50 rounded-full flex items-center justify-center cursor-pointer"

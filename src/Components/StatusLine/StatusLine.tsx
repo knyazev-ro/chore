@@ -20,7 +20,7 @@ export default function StatusLine({ columns, chore }) {
                   className="relative border-3 border-black w-10 h-full cursor-pointer group flex items-center justify-center"
                   style={{
                     backgroundColor: e.current
-                      ? "#F0B100"
+                      ? "#ffc31e"
                       : "#F8FAFC",
                   }
                 }

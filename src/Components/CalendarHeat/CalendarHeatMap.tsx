@@ -43,7 +43,7 @@ export default function CalendarHeatMap() {
       date: { start: new Date('2025-01-01') },
       range: 1,
       scale: { color: { type: 'linear', 
-        range: ['#020618' , "#155DFC"],
+        range: ['#1f2254' , "#155DFC"],
         domain: [0, 40] } }, 
         // Поддержка шкалы цвета
       domain: {
