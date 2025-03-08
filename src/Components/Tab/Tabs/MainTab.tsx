@@ -1,10 +1,14 @@
-import { PlusCircleIcon, PlusIcon } from "@heroicons/react/24/outline";
-import PersonCard from "../../PersonCard/PersonCard";
+import CalendarHeatMap from "../../CalendarHeat/CalendarHeatMap";
 
 export default function MainTab({ chore }: { chore: any }) {
   return (
-    <div className="flex flex-wrap gap-8 gap-y-14 items-center justify-center h-full overflow-x-scroll custom-scroll p-8 border-3 border-white">
-     
+    <div className="flex flex-wrap w-full h-full overflow-x-scroll custom-scroll p-2 border-3 border-white">
+      <div className="relative flex w-full h-30">
+        <div className="flex z-10 w-full h-30 bg-stone-100 border-stone-950 border-3 p-4">
+        <CalendarHeatMap />
+          </div>
+        <div className="absolute w-full h-full bg-stone-800 translate-1.5 border-3 border-stone-950"></div>
+      </div>
     </div>
   );
 }

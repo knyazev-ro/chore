@@ -14,7 +14,7 @@ export default function CommentaryArea() {
       />
         </div>
         <div className="p-1 justify-start flex flex-col w-1/12 h-full">
-            <div className='relative w-full h-13 border-3 border-stone-950'>
+            <div className='relative w-full h-13 border-3 border-stone-950 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out'>
             <div className='w-full h-full absolute flex justify-between items-center p-0.5'>
                 <div className='bg-stone-950 w-full h-full flex justify-center items-center'>
                 <SendIcon className='rotate-270 bg-stone-100 p-0.5' sx={{ fontSize: 30, color:"#0C0A09" }} />
