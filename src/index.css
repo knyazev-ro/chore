@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Marmelad&display=swap');
-@import "./Chore/ChoreCard/ChoreCSS/chore.css";
 @import url('https://fonts.googleapis.com/css2?family=Marmelad&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 @import "tailwindcss";
+@import "./Chore/ChoreCard/ChoreCSS/chore.css";
 
 .comfortaa {
     font-family: "Comfortaa", serif;

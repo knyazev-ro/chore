@@ -11,6 +11,7 @@ import TimePing from "../../Components/TimePing.tsx/TimePing";
 import DataTab from "../../Components/Tab/Tabs/DataTab";
 import { Cog6ToothIcon } from "@heroicons/react/24/solid";
 import { PaintBrushIcon } from "@heroicons/react/24/solid";
+import CommentTab from "../../Components/Tab/Tabs/CommentTab";
 
 export default function CurrentChoreModal({
   setShowModal,
@@ -56,7 +57,7 @@ export default function CurrentChoreModal({
       id: 4,
       title: "Комментарии",
       current: false,
-      component: MainTab,
+      component: CommentTab,
     },
   ]);
 
@@ -178,13 +179,13 @@ export default function CurrentChoreModal({
               <ChoreStatusCell value={singleChore} />
               <StatusLine chore={singleChore} columns={columns}/>
             </div>
-            <div className="flex border-double px-4 gap-2 py-1 border-4 comfortaa text-rose-50">
+            <div className="flex border-double px-4 gap-2 py-1 border-4 border-blue-700 comfortaa text-rose-50 bg-stone-100">
               {/* {!isNew || [...singleChore.title].length > 1
                 ? singleChore.title
                 : "Создать чор"} */}
-                <Cog6ToothIcon className="w-6 h-6 text-white" />
-                <XMarkIcon className="w-6 h-6 text-white stroke-4" />
-                <PaintBrushIcon className="w-6 h-6 text-white" />
+                <Cog6ToothIcon className="w-6 h-6 text-blue-500" />
+                <XMarkIcon className="w-6 h-6 text-yellow-500 stroke-4" />
+                <PaintBrushIcon className="w-6 h-6 text-rose-500" />
             </div>
 
             <div className="w-72 flex justify-end gap-4">
