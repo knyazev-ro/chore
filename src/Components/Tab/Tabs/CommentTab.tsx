@@ -174,7 +174,7 @@ export default function CommentTab() {
       
   return (
     <div className="flex flex-col h-full w-full border-3 border-white min-h-0 overflow-hidden">
-      <div className="flex-grow min-h-0">
+      <div className="min-h-1/2">
         <CommentBox conversation={conversation} authors={allAuthorsInConversation} />
       </div>
       <CommentaryArea />
