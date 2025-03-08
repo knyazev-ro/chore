@@ -1,5 +1,11 @@
-export default function CommentCard({ comment }: { comment: any }) {
-  const { author, response, isMe } = comment;
+export default function CommentCard({
+  comment,
+  authors,
+}: {
+  comment: any;
+  authors: any;
+}) {
+  const { author, response, isMe, reactions } = comment;
   return (
     <>
       <div
@@ -19,6 +25,29 @@ export default function CommentCard({ comment }: { comment: any }) {
               {author.full_name}
             </div>
             <div className="flex comfortaa text-stone-950">{response}</div>
+            <div className="flex justify-end w-full gap-1">
+              {reactions.map((e) => (
+                <div className="flex bg-stone-200 p-1 px-2 gap-3">
+                  {e.who.length > 5 ? (
+                    <div className="w-7 h-7 min-w-7 min-h-7 bg-stone-400 flex rounded-full comfortaa text-stone-100 items-center justify-center text-sm">
+                      {e.who.length}
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center">
+                      {authors
+                        .filter((el) => e.who.includes(el.id))
+                        .map((el) => (
+                          <img
+                            className="border-2 border-white min-w-7 min-h-7 h-7 w-7 -mr-2 rounded-full bg-stone-500"
+                            src={el.avatar}
+                          />
+                        ))}
+                    </div>
+                  )}
+                  <div className="">{e.reaction}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div
