@@ -16,9 +16,9 @@ export default function ChoreCardAlt() {
     ]
 
   return (
-    <div className="flex relative w-40 h-52 border-3 border-stone-950 bg-stone-200">
+    <div className="cursor-pointer hover:scale-102 transition-all duration-300 ease-in-out flex relative w-40 h-52 border-3 border-stone-950 bg-stone-200">
 
-    <div className="w-full h-full p-2 comfortaa flex flex-col justify-between">
+    <div className="w-full h-full p-2 translate-1 comfortaa flex flex-col justify-between">
        <div className="w-full flex">
         <div className="w-16 h-16 border-3 bg-stone-500 flex justify-center items-center p-1 relative">
             <div className=" z-10 w-full h-full bg-amber-200 border-3">
@@ -37,7 +37,7 @@ export default function ChoreCardAlt() {
             </div>
        </div>
 
-       <div className="w-full flex justify-between h-7 items-center">
+       <div className="w-full flex justify-between h-7 items-center -translate-y-1.5">
         <div>
         <div className="flex items-center justify-center">
                       {authors
@@ -49,7 +49,6 @@ export default function ChoreCardAlt() {
                         ))}
                     </div>
         </div>
-        <div></div>
 
         <div>
             <div className="text-[10px]">

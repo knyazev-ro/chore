@@ -22,12 +22,12 @@ export default function TrelloHead({ project }: { project: any }) {
           <img
             src={avatar}
             alt="logo"
-            className="w-7 h-7 rounded-full border-2"
+            className="w-7 h-7 border-2"
             style={{ borderColor: bg_color }}
           />
           <div className="relative flex">
             <div
-              className="z-10 border-4 px-4 border-double rounded-full items-center justify-center flex"
+              className="z-10 border-4 px-4 border-double items-center justify-center flex"
               style={{ backgroundColor: bg_color }}
             >
               <div
@@ -39,14 +39,14 @@ export default function TrelloHead({ project }: { project: any }) {
               </div>
             </div>
             <div
-              className="absolute translate-x-2 border-4 px-4 border-double rounded-full items-center justify-center flex bg-amber-200"
+              className="absolute translate-x-2 border-4 px-4 border-double items-center justify-center flex bg-amber-200"
               style={{ backgroundColor: bg_color_first }}
             >
               {title}
             </div>
 
             <div
-              className="absolute -translate-x-2 border-4 px-4 border-double rounded-full items-center justify-center flex bg-slate-200"
+              className="absolute -translate-x-2 border-4 px-4 border-double items-center justify-center flex bg-slate-200"
               style={{ backgroundColor: bg_color_second }}
             >
               {title}
