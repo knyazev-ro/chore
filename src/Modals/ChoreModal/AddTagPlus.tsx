@@ -114,7 +114,7 @@ export default function AddTagPlus({
               ref={ref}
               className="justify-end flex flex-col absolute w-64 h-64 -translate-y-36 -translate-x-33"
             >
-              <div className="max-h-64 p-2 backdrop-blur-xs custom-scroll overflow-y-scroll border-4 border-double rounded-t-2xl rounded-l-2xl">
+              <div className="max-h-64 p-2 backdrop-blur-xs custom-scroll overflow-y-scroll border-4 border-double">
                 <div
                   className="flex flex-wrap gap-1 font-bold p-1"
                   style={{ fontSize: "12px" }}

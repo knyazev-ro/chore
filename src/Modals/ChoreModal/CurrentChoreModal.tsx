@@ -12,6 +12,7 @@ import DataTab from "../../Components/Tab/Tabs/DataTab";
 import { Cog6ToothIcon } from "@heroicons/react/24/solid";
 import { PaintBrushIcon } from "@heroicons/react/24/solid";
 import CommentTab from "../../Components/Tab/Tabs/CommentTab";
+import PersonTab from "../../Components/Tab/Tabs/PersonTab";
 
 export default function CurrentChoreModal({
   setShowModal,
@@ -45,7 +46,7 @@ export default function CurrentChoreModal({
       id: 2,
       title: "Пользователи",
       current: false,
-      component: MainTab,
+      component: PersonTab,
     },
     {
       id: 3,
