@@ -13,6 +13,14 @@ import { Cog6ToothIcon } from "@heroicons/react/24/solid";
 import { PaintBrushIcon } from "@heroicons/react/24/solid";
 import CommentTab from "../../Components/Tab/Tabs/CommentTab";
 import PersonTab from "../../Components/Tab/Tabs/PersonTab";
+import { HandRaisedIcon } from '@heroicons/react/24/solid';
+
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import {
+  PencilIcon,
+  TrashIcon,
+  PaperClipIcon
+} from '@heroicons/react/16/solid'
 
 export default function CurrentChoreModal({
   setShowModal,
@@ -175,7 +183,7 @@ export default function CurrentChoreModal({
       <div className="relative w-full h-screen flex items-center justify-center">
         <div className="z-10 flex flex-col w-11/12 h-11/12 bg-stone-100 border-t-4 border-l-4 border-r-4 border-black shadow-md items-center overflow-hidden">
          
-          <div className="bg-blue-600 border-b-3 h-16 flex items-center justify-between px-4 py-2 w-full z-1">
+          <div className="z-20 bg-blue-600 border-b-3 h-16 flex items-center justify-between px-4 py-2 w-full z-1">
             <div className="flex gap-2 items-center w-72">
               <ChoreStatusCell value={singleChore} />
               <StatusLine chore={singleChore} columns={columns}/>
@@ -191,9 +199,38 @@ export default function CurrentChoreModal({
             </div>
 
             <div className="w-72 flex justify-end items-center gap-4">
-              <div className="relative w-16 h-7 border-3 bg-blue-700">
+              
+              <div className="flex flex-col relative">
+              <Menu>
+
+              <MenuButton className="hover:scale-102 group flex relative cursor-pointer">
+                <div className="flex w-9 h-9 border-3 active:rotate-4 transition-all duration-100 ease-in-out bg-blue-500 justify-center items-center ">
+                  <div className="w-full h-full active:rotate-24 transition-all duration-200 ease-in-out flex justify-center items-center">
+                  <HandRaisedIcon className="h-6 w-6 text-stone-100" />
+                  </div>
+                  </div>
                 <div className="absolute w-full h-full bg-stone-950 -z-10 translate-1.5"></div>
+              </MenuButton>
+
+              <MenuItems className={"comfortaa absolute translate-y-10.5 w-60 bg-stone-100/95 backdrop-blur-3xl p-2 flex flex-col gap-2 border-3"}>
+              
+              <MenuItem>
+              <div className="hover:bg-stone-950/95 hover:border-stone-100/50 active:bg-stone-100/50 active:text-stone-200/50 transition-all duration-300 ease-in-out active:border-stone-200/50 hover:text-stone-100 group flex justify-between items-center border-2 px-2 py-1">Копировать <div><PaperClipIcon className="size-4 fill-stone-950 group-hover:fill-stone-100 group-active:fill-stone-200"/></div></div>
+              </MenuItem>
+
+              <MenuItem>
+              <div className="hover:bg-stone-950/95 hover:border-stone-100/50 active:bg-stone-100/50 active:text-stone-200/50 transition-all duration-300 ease-in-out active:border-stone-200/50 hover:text-stone-100 group flex justify-between items-center border-2 px-2 py-1">Создать подзадачу <div><PencilIcon className="size-4 fill-stone-950 group-hover:fill-stone-100 group-active:fill-stone-200"/></div></div>
+              </MenuItem>
+
+              <MenuItem>
+              <div className="hover:bg-stone-950/95 hover:border-stone-100/50 active:bg-stone-100/50 active:text-stone-200/50 transition-all duration-300 ease-in-out active:border-stone-200/50 hover:text-stone-100 group flex justify-between items-center border-2 px-2 py-1">Удалить <div><TrashIcon className="size-4 fill-stone-950 group-hover:fill-stone-100 group-active:fill-stone-200"/></div></div>
+              </MenuItem>
+              
+              </MenuItems>
+
+              </Menu>
               </div>
+
               <TimePing durationTime={singleChore.durationTime} estimationTime={singleChore.estimationTime}/>
               <div
                 className="w-9 h-9 bg-slate-50 rounded-full flex items-center justify-center cursor-pointer"
@@ -245,7 +282,7 @@ export default function CurrentChoreModal({
               </div>
             </div>
 
-            <div className="w-220 h-full p-6">
+            <div className="z-10 w-220 h-full p-6">
               <div className="h-full flex">
                 <Tab
                   tabs={tabs}
