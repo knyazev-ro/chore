@@ -4,28 +4,52 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 import { useState } from "react";
 import PageCompany from "./MainPages/PageCompany";
 import Header from "../../Components/Header/Header";
+import PageTemplate from "../../Components/PageTemplates/PageTemplate";
 
 export default function MainPage() {
   const [open, setOpen] = useState(true);
   const avialablePages = [PageOne, PageAboutCommunity, PageCompany];
 
-  return (
-    <div className="flex flex-col overflow-hidden relative h-screen w-screen">
-      <Header open={open} setOpen={setOpen} />
+  const menuItems = [
+    {
+      id: 1,
+      title: "Trello",
+      route: "/trello",
+    },
+    {
+      id: 2,
+      title: "Messages",
+      route: "/",
+    },
+    {
+      id: 3,
+      title: "Notifications",
+      route: "/",
+    },
+    {
+      id: 4,
+      title: "Calendar",
+      route: "/",
+    },
+    {
+      id: 5,
+      title: "Company",
+      route: "/",
+    },
+    {
+      id: 5,
+      title: "News",
+      route: "/",
+    },
+    {
+      id: 5,
+      title: "Subscription",
+      route: "/",
+    },
+  ];
 
-      <div className="relative flex h-full w-full">
-        <div
-          className={`translate-y-10 transition-transform duration-500 ease-in-out ${
-            open ? "transform translate-x-0" : "transform -translate-x-full"
-          } w-64 bg-gray-800 z-10 fixed top-0 left-0 h-screen`}
-        >
-          <Sidebar />
-        </div>
-        <div
-          className={`w-full h-full flex flex-col overflow-x-hidden overflow-y-scroll custom-scroll border-3 border-stone-100 transition-all duration-500 ${
-            open ? "ml-64" : "ml-0"
-          }`}
-        >
+  return (
+    <PageTemplate menu={menuItems}>
           {avialablePages.map((Page, index) => (
             <div
               key={index}
@@ -34,8 +58,6 @@ export default function MainPage() {
               <Page />
             </div>
           ))}
-        </div>
-      </div>
-    </div>
+    </PageTemplate>
   );
 }
