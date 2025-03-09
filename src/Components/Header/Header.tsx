@@ -31,7 +31,7 @@ export default function Header({ open, setOpen }: { open: any; setOpen: any }) {
         <div>
           <MagnifyingGlassIcon className="w-6 h-6" color="white" />
         </div>
-        <div className="bg-stone-800 px-4 py-2 border-3 border-stone-100 flex justify-center items-center text-xs">
+        <div className="bg-stone-800 px-4 py-2 border-3 border-stone-100 flex justify-center items-center text-xs cursor-pointer hover:bg-stone-900 transition-all duration-200 ease-in-out hover:scale-102">
           Log In
         </div>
       </div>
