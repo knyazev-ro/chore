@@ -14,7 +14,7 @@ export default function MainPage() {
   return (
     <div className="flex flex-col overflow-hidden relative h-screen w-screen">
       <header className="z-100 w-full min-h-20 h-20 flex bg-stone-950 comfortaa text-stone-100 items-center p-4 justify-between">
-        <div className="flex gap-4 items-center text-3xl text-stone-100">
+        <div className="flex gap-4 items-center lg:text-3xl sm:text-xl text-stone-100">
           {/* <img src={"../assets/chore-logo.svg"}/> */}
           <Logo fill={"white"} width={"35px"} height={"35px"} />
           Chore Community
