@@ -4,7 +4,7 @@ import PageOne from "./MainPages/PageOne";
 import PageAboutCommunity from "./MainPages/PageAboutCommunity";
 
 export default function MainPage() {
-  const avialablePages = [PageOne, PageAboutCommunity];
+  const avialablePages = [PageOne, PageAboutCommunity,];
 
   return (
     <div className="flex flex-col overflow-hidden relative h-screen w-screen">
@@ -26,9 +26,9 @@ export default function MainPage() {
       </header>
 
       <div className="relative flex flex-col overflow-y-scroll overflow-x-hidden custom-scroll h-full w-full border-3 border-stone-100">
-        {avialablePages.map((e) => (
-          <div className="relative flex flex-col min-w-full min-h-full max-w-full max-h-full">
-            {e()}
+        {avialablePages.map((Page, index) => (
+          <div key={index} className="relative flex flex-col min-w-full min-h-full max-w-full max-h-full">
+            <Page />
           </div>
         ))}
       </div>
