@@ -12,7 +12,7 @@ export default function Sidebar({ menu }: { menu: Array<any> }) {
             <div
               onClick={() => nav(e.route)}
               key={e.id}
-              className="relative flex items-center justify-between group transition-all duration-500 ease-in-out hover:bg-stone-900 py-4 px-3 overflow-hidden"
+              className="relative flex items-center justify-between group transition-all duration-500 ease-in-out hover:bg-stone-900 py-4 px-4 overflow-hidden"
             >
               <div className="z-10">{e.title}</div>
               <ChevronDoubleRightIcon
