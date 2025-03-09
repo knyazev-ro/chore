@@ -3,6 +3,7 @@ import ChoreCard from "./Chore/ChoreCard/ChoreCard";
 import ChoreTrello from "./Chore/Trello/ChoreTrello";
 import ChoreTrelloColumn from "./Chore/Trello/ChoreTrelloColumn";
 import TrelloPage from "./Chore/TrelloPage/TrelloPage";
+import MainPage from "./Entry/Main/MainPage";
 
 function App() {
 
@@ -373,7 +374,9 @@ const project = {
     <>
     <BrowserRouter>
     
-      <TrelloPage project={project}/>
+      {/* <TrelloPage project={project}/> */}
+
+    <MainPage/>
     </BrowserRouter>
     </>
   );
