@@ -7,7 +7,7 @@ export default function Header({ open, setOpen }: { open: any; setOpen: any }) {
   const nav = useNavigate();
   
     return (
-    <header className="z-20 w-full min-h-20 h-20 flex bg-stone-950 comfortaa text-stone-100 items-center p-4 justify-between">
+    <header className="z-20 w-full min-h-16 h-16 flex bg-stone-950 comfortaa text-stone-100 items-center p-4 justify-between">
       <div className="flex gap-4 items-center lg:text-3xl sm:text-xl text-stone-100">
         {/* <img src={"../assets/chore-logo.svg"}/> */}
         <div 

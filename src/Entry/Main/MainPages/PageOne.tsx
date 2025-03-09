@@ -1,61 +1,14 @@
-
 export default function PageOne() {
-
-
-  return (
-    <>
-    <div className="bg-blue-500 w-full h-full"></div>
-      {/* <div className="flex flex-col w-full h-full -z-10 absolute">
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-        <div className="h-1/9 w-full bg-blue-500"></div>
-        <div className="h-1/9 w-full bg-yellow-500"></div>
-        <div className="h-1/9 w-full bg-rose-500"></div>
-      </div> */}
-    </>
-  );
-}
+    return (
+      <div className="bg-blue-500 w-full h-full text-white p-10 comfortaa flex items-center justify-center">
+        <div className="max-w-4xl p-6 text-center">
+          <h1 className="text-5xl font-bold uppercase tracking-wide">Chore Community</h1>
+          <p className="mt-6 text-xl opacity-80 leading-relaxed">
+            Мы верим, что управление задачами должно быть простым. Никакой сложности, никаких лишних шагов — только 
+            удобные инструменты, которые работают на вас. Создавайте, организовывайте и достигайте целей без лишних препятствий. 
+            Минимум усилий. Максимум результата.
+          </p>
+        </div>
+      </div>
+    );
+  }
