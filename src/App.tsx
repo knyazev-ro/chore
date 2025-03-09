@@ -4,6 +4,7 @@ import ChoreTrello from "./Components/Trello/ChoreTrello";
 import ChoreTrelloColumn from "./Components/Trello/ChoreTrelloColumn";
 import TrelloPage from "./Entry/TrelloPage/TrelloPage";
 import MainPage from "./Entry/Main/MainPage";
+import LogIn from "./Entry/LogIn";
 
 function App() {
 
@@ -387,7 +388,7 @@ const project = {
       <Route path="/">
       <Route index element={<MainPage/>}/>
       <Route path="trello" element={<TrelloPage project={project}/>}/>
-      {/* <Route index element={<MainPage/>}/> */}
+      <Route path="log-in" element={<LogIn/>}/>
 
       </Route>
 
