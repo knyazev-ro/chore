@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ChoreCard from "./Chore/ChoreCard/ChoreCard";
 import ChoreTrello from "./Chore/Trello/ChoreTrello";
 import ChoreTrelloColumn from "./Chore/Trello/ChoreTrelloColumn";
@@ -373,10 +373,15 @@ const project = {
   return (
     <>
     <BrowserRouter>
-    
-      {/* <TrelloPage project={project}/> */}
+    <Routes>
+      <Route path="/">
+      <Route index element={<MainPage/>}/>
+      <Route path="trello" element={<TrelloPage project={project}/>}/>
+      {/* <Route index element={<MainPage/>}/> */}
 
-    <MainPage/>
+      </Route>
+
+    </Routes>
     </BrowserRouter>
     </>
   );

@@ -1,41 +1,45 @@
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
+
+    const nav = useNavigate();
+
   const menuItems = [
     {
       id: 1,
       title: "Trello",
-      route: "",
+      route: "/trello",
     },
     {
       id: 2,
       title: "Messages",
-      route: "",
+      route: "/",
     },
     {
       id: 3,
       title: "Notifications",
-      route: "",
+      route: "/",
     },
     {
       id: 4,
       title: "Calendar",
-      route: "",
+      route: "/",
     },
     {
       id: 5,
       title: "Company",
-      route: "",
+      route: "/",
     },
     {
       id: 5,
       title: "News",
-      route: "",
+      route: "/",
     },
     {
       id: 5,
       title: "Subscription",
-      route: "",
+      route: "/",
     },
   ];
 
@@ -45,6 +49,7 @@ export default function Sidebar() {
         {menuItems.map((e) => (
           <>
             <div
+            onClick={() => nav(e.route)}
               key={e.id}
               className="relative flex items-center justify-between group transition-all duration-500 ease-in-out hover:bg-stone-900 py-4 px-3 overflow-hidden"
             >

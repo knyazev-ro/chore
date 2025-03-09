@@ -32,7 +32,7 @@ export default function ChoreTrelloColumn({ column, handleClickPlusButton }: { c
             <ChoreCard chore={e} />
           ))}
 
-<div className="h-30">
+<div className="h-70">
 
           <div className="w-20 h-20 rounded-full cursor-pointer border-4 border-dashed border-slate-900 items-center justify-center flex shadow-md bg-white/10 backdrop-blur-md hover:border-slate-700 group-hover:opacity-100 opacity-0 transition-all duration-300"
           onClick={handleClickPlusButton}

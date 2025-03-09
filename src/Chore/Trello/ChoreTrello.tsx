@@ -11,9 +11,9 @@ export default function ChoreTrello({ columns }: { columns: any }) {
 
   return (
     <>
-    <div className="">
+    <div className="relative">
 
-      <div className="flex h-screen overflow-y-hidden custom-scroll">
+      <div className="flex h-screen overflow-y-scroll custom-scroll">
         {columns.map((column: any) => (
           <ChoreTrelloColumn column={column} handleClickPlusButton={handleClickPlusButton} />
         ))}

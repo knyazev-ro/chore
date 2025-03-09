@@ -1,14 +1,22 @@
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Logo from "../../assets/Logo";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Header({ open, setOpen }: { open: any; setOpen: any }) {
-  return (
-    <header className="z-100 w-full min-h-20 h-20 flex bg-stone-950 comfortaa text-stone-100 items-center p-4 justify-between">
+  const nav = useNavigate();
+  
+    return (
+    <header className="z-20 w-full min-h-20 h-20 flex bg-stone-950 comfortaa text-stone-100 items-center p-4 justify-between">
       <div className="flex gap-4 items-center lg:text-3xl sm:text-xl text-stone-100">
         {/* <img src={"../assets/chore-logo.svg"}/> */}
-        <Logo fill={"white"} width={"35px"} height={"35px"} />
+        <div 
+        onClick={() => nav("/")}
+        className="flex gap-4 items-center cursor-pointer">
+            
+            <Logo fill={"white"} width={"35px"} height={"35px"} />
         Chore Community
+        </div>
         <button
           onClick={() => setOpen((p) => !p)}
           className={`cursor-pointer ${
