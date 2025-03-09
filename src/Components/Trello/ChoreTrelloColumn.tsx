@@ -1,4 +1,4 @@
-import ChoreCard from "../ChoreCard/ChoreCard";
+import ChoreCard from "../../Chore/ChoreCard/ChoreCard";
 import { EllipsisHorizontalIcon, PlusIcon } from "@heroicons/react/24/solid";
 
 export default function ChoreTrelloColumn({ column, handleClickPlusButton }: { column: any, handleClickPlusButton:any }) {

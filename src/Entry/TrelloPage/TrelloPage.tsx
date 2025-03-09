@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ChoreTrello from "../Trello/ChoreTrello";
+import ChoreTrello from "../../Components/Trello/ChoreTrello";
 import TrelloHead from "./TrelloHead";
 import Header from "../../Components/Header/Header";
 

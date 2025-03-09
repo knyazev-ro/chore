@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ChoreCard from "./Chore/ChoreCard/ChoreCard";
-import ChoreTrello from "./Chore/Trello/ChoreTrello";
-import ChoreTrelloColumn from "./Chore/Trello/ChoreTrelloColumn";
-import TrelloPage from "./Chore/TrelloPage/TrelloPage";
+import ChoreTrello from "./Components/Trello/ChoreTrello";
+import ChoreTrelloColumn from "./Components/Trello/ChoreTrelloColumn";
+import TrelloPage from "./Entry/TrelloPage/TrelloPage";
 import MainPage from "./Entry/Main/MainPage";
 
 function App() {

@@ -1,4 +1,4 @@
-import ChoreStatusCell from "../ChoreCard/ChoreStatusCell";
+import ChoreStatusCell from "../../../Chore/ChoreCard/ChoreStatusCell";
 
 export default function ChoreCardAlt() {
 

@@ -1,4 +1,4 @@
-import ChoreCardAlt from "../../../Chore/AlternateChoreCard/ChoreCardAlt";
+import ChoreCardAlt from "../../Chore/AlternateChoreCard/ChoreCardAlt";
 import CalendarHeatMap from "../../CalendarHeat/CalendarHeatMap";
 import CalendarStyled from "../../CalendarHeat/CalendarStyled";
 
