@@ -10,7 +10,7 @@ export default function LogIn() {
   return (
     <>
       <div className="w-screen h-screen flex items-center justify-center overflow-hidden bg-stone-950">
-        <div className="gap-4 comfortaa w-1/3 h-9/12 border-3 border-stone-100 bg-stone-950 flex flex-col items-center justify-between p-8">
+        <div className="gap-4 comfortaa w-1/3 min-w-86 h-9/12 border-3 border-stone-100 bg-stone-950 flex flex-col items-center justify-between p-8">
           <div className="z-10">
             <div className="inline bg-blue-500 text-stone-100 text-3xl py-3 px-10">Log in</div>
           </div>
