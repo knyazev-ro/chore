@@ -1,12 +1,36 @@
+import { useDrop } from "react-dnd";
 import ChoreCard from "../../Chore/ChoreCard/ChoreCard";
 import { EllipsisHorizontalIcon, PlusIcon } from "@heroicons/react/24/solid";
 
-export default function ChoreTrelloColumn({ column, handleClickPlusButton }: { column: any, handleClickPlusButton:any }) {
+export default function ChoreTrelloColumn({ column,  setColumns, columns, handleClickPlusButton }: { column: any, handleClickPlusButton:any, setColumns:any, columns:any }) {
   const { title, items, bg_color, title_color } = column;
+  const [{ isOver, canDrop }, drop] = useDrop({
+    accept: 'chore',
+    collect: mon => ({
+      isOver: !!mon.isOver(),
+      canDrop: !!mon.canDrop()
+    }),
+    drop: monitor => {
+      setColumns(columns.map((e) => {
+        if(monitor.column_id === column.id){
+          return e;
+        }
+        if(monitor.column_id === e.id){
+          return e = {...e, items:e.items.filter(el => el.id !== monitor.chore.id)};
+        }
+        if(column.id === e.id){
+          return e = {...e, items: [...e.items.filter(el => el.id !== monitor.chore.id), monitor.chore]};
+        }
+        return e;
+      }))
+      console.log('moving item:', monitor)
+    }
+  })
 
   return (
     <>
       <div
+      ref={drop}
         className="group flex flex-col min-w-80 border-3 border-green-300 bg-green-300 backdrop-blur-md hover:bg-white/20 transition-all duration-300 relative h-screen overflow-scroll custom-scroll"
         style={{ backgroundColor: bg_color, borderColor: bg_color }}
       >
@@ -29,7 +53,7 @@ export default function ChoreTrelloColumn({ column, handleClickPlusButton }: { c
 
         <div className="flex flex-col items-center justify-center gap-4 py-2">
           {items.map((e: any) => (
-            <ChoreCard chore={e} />
+            <ChoreCard chore={e} columnId={column.id}/>
           ))}
 
 <div className="h-70">

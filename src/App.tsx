@@ -9,6 +9,7 @@ function App() {
 
 const chores = [
   {
+    id:1,
     title: "Запуск рекламной кампании 'Black Friday Sale'",
     status: 2,
     estimation_time: '1h. 20m.',
@@ -35,6 +36,7 @@ const chores = [
     },
   },
   {
+    id:2,
     title: "Разработка новой функции чата",
     status: 1,
     estimation_time: '3h. 40m.',
@@ -61,6 +63,7 @@ const chores = [
     },
   },
   {
+    id:3,
     title: "Оптимизация скорости загрузки сайта",
     status: 3,
     estimation_time: '2h. 30m.',
@@ -87,6 +90,7 @@ const chores = [
     },
   },
   {
+    id:4,
     title: "Подготовка отчета о продажах за квартал",
     status: 2,
     estimation_time: '4h. 0m.',
@@ -113,6 +117,7 @@ const chores = [
     },
   },
   {
+    id:5,
     title: "Создание лендинга для нового продукта",
     status: 1,
     estimation_time: '6h. 15m.',
@@ -139,6 +144,7 @@ const chores = [
     },
   },
   {
+    id:6,
     title: "Тестирование новой системы оплаты",
     status: 1,
     estimation_time: '2h. 30m.',
@@ -165,6 +171,7 @@ const chores = [
     },
   },
   {
+    id:7,
     title: "Подготовка технической документации",
     status: 2,
     estimation_time: '3h. 0m.',
@@ -191,6 +198,7 @@ const chores = [
     },
   },
   {
+    id:8,
     title: "Создание рекламного видеоролика",
     status: 3,
     estimation_time: '5h. 0m.',
@@ -217,6 +225,7 @@ const chores = [
     },
   },
   {
+    id:9,
     title: "Обновление системы безопасности",
     status: 2,
     estimation_time: '6h. 30m.',
@@ -243,6 +252,7 @@ const chores = [
     },
   },
   {
+    id:10,
     title: "Обучение новых сотрудников",
     status: 1,
     estimation_time: '8h. 0m.',
