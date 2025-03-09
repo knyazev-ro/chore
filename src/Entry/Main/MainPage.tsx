@@ -1,9 +1,5 @@
-import { StarIcon } from "@heroicons/react/24/outline";
-import Logo from "../../assets/Logo";
 import PageOne from "./MainPages/PageOne";
 import PageAboutCommunity from "./MainPages/PageAboutCommunity";
-import { Bars3Icon } from "@heroicons/react/24/outline";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import { useState } from "react";
 import PageCompany from "./MainPages/PageCompany";
@@ -15,7 +11,7 @@ export default function MainPage() {
 
   return (
     <div className="flex flex-col overflow-hidden relative h-screen w-screen">
-     <Header open={open} setOpen={setOpen}/>
+      <Header open={open} setOpen={setOpen} />
 
       <div className="relative flex h-full w-full">
         <div
