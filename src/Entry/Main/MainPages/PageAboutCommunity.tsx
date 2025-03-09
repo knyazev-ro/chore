@@ -1,6 +1,6 @@
 export default function PageAboutCommunity()
 {
     return <>
-    <div className="w-full h-full bg-blue-500"></div>
+    <div className="w-full h-full bg-yellow-500"></div>
     </>
 }
