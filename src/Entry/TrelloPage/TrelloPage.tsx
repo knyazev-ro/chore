@@ -5,43 +5,49 @@ import Header from "../../Components/Header/Header";
 import PageTemplate from "../../Components/PageTemplates/PageTemplate";
 
 export default function TrelloPage({ project }: { project: any }) {
-  const [open, setOpen] = useState(false);
   const { columns } = project;
+
+  const [open, setOpen] = useState(false);
 
   const menuItems = [
     {
+      id:0, 
+      title: "N-Диск",
+      route: "/",
+    },
+    {
       id: 1,
-      title: "Trello",
+      title: "Камбан",
       route: "/trello",
     },
     {
       id: 2,
-      title: "Messages",
+      title: "Сообщения",
       route: "/",
     },
     {
       id: 3,
-      title: "Notifications",
-      route: "/",
+      title: "Нотификации",
+      route: "/notifications",
     },
     {
       id: 4,
-      title: "Calendar",
+      title: "Календарь",
       route: "/",
     },
     {
       id: 5,
-      title: "Company",
+      title: "О команде",
       route: "/",
     },
     {
       id: 5,
-      title: "News",
+      title: "Новости",
       route: "/",
     },
     {
       id: 5,
-      title: "Subscription",
+      title: "Подписка",
       route: "/",
     },
   ];

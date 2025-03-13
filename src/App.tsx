@@ -5,6 +5,7 @@ import ChoreTrelloColumn from "./Components/Trello/ChoreTrelloColumn";
 import TrelloPage from "./Entry/TrelloPage/TrelloPage";
 import MainPage from "./Entry/Main/MainPage";
 import LogIn from "./Entry/LogIn";
+import NotificationPage from "./Entry/Notifications/NotificationPage";
 
 function App() {
 
@@ -350,7 +351,7 @@ const columns = [
 
 const project = {
   id: 1,
-  title: "Проект Хамелеон",
+  title: "Разработка CNN архитектуры для сжатия изображений",
   description: "Система управления задачами с адаптивным интерфейсом.",
   bg_color: '#4A90E2', // Глубокий синий
   bg_color_first: '#50E3C2', // Яркий бирюзовый
@@ -389,6 +390,7 @@ const project = {
       <Route index element={<MainPage/>}/>
       <Route path="trello" element={<TrelloPage project={project}/>}/>
       <Route path="log-in" element={<LogIn/>}/>
+      <Route path="notifications" element={<NotificationPage/>}/>
 
       </Route>
 
