@@ -49,7 +49,7 @@ export default function NotificationPage() {
   return (
     <>
       <PageTemplate menu={menuItems}>
-        <div className="w-full h-full px-40 flex flex-col justify-end img">
+        <div className="w-full h-full px-60 flex flex-col img">
           <div className="flex flex-col h-full gap-2.5 justify-end">
             <div className="flex items-end h-24 ">
               <div className="w-11 h-11 p-1.5 bg-stone-950">
@@ -64,13 +64,20 @@ export default function NotificationPage() {
               </div>
             </div>
 
-            <div className="flex flex-col w-full h-full bg-rose-500 border-3 border-stone-950 overflow-y-scroll custom-scroll shadow-xl gap-1">
+            <div className="flex flex-col w-full bg-rose-500 border-3 border-stone-950 overflow-y-scroll custom-scroll shadow-xl gap-1">
+                <NotificationCard/>
+                <NotificationCard/>
                 <NotificationCard/>
                 <NotificationCard/>
                 <NotificationCard/>
 
                 <NotificationCard/>
                 <NotificationCard/>
+                <NotificationCard/>
+                <NotificationCard/>
+                <NotificationCard/>
+
+                <div className="min-h-16"></div>
             </div>
           </div>
         </div>
