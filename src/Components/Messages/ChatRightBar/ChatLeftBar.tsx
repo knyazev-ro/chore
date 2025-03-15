@@ -1,6 +1,7 @@
 import { Switch } from "@headlessui/react";
 import { CheckIcon, FolderIcon, GifIcon, InformationCircleIcon, PaperClipIcon, PhotoIcon, VideoCameraIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { ChevronDoubleLeftIcon } from "@heroicons/react/24/solid";
+import { useRef, useState, useEffect } from "react";
 
 export default function ChatLeftBar({
   chatActiveInfo,
@@ -8,6 +9,15 @@ export default function ChatLeftBar({
   chatActiveIcon: any;
 }) {
   const [enabled, setEnabled] = useState(false);
+  const [openFileBar, setOpenFileBar] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (ref.current && openFileBar) {
+        ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+}, [openFileBar]);
+
   const tabs = [
     {
         id: 1,
@@ -38,7 +48,9 @@ export default function ChatLeftBar({
 
   return (
     <>
-      <div className="comfortaa flex flex-col gap-2 p-2 w-109 max-w-109 h-full bg-stone-950 border-l-3 border-stone-100 overflow-y-scroll custom-scroll relative">
+      <div className="comfortaa flex w-109 max-w-109 h-full bg-stone-950 border-l-3 border-stone-100 overflow-y-scroll custom-scroll relative">
+        
+        <div className="w-full h-full flex flex-col  gap-2 p-2 ">
         <div className="bg-stone-800 w-full flex flex-col p-3 gap-2">
           <div className="flex gap-2 items-center">
             <div className="w-17 h-17 bg-stone-100 border-3"></div>
@@ -76,16 +88,41 @@ export default function ChatLeftBar({
             </Switch>
           </div>
         </div>
+
         <div className="h-full bg-stone-800 flex flex-col text-stone-100 text-sm">
             {
                 tabs.map(e => (
-                    <div className="px-4 py-3 gap-6 flex w-full hover:bg-stone-900 transition-all duration-300 ease-in-out active:bg-stone-950 items-center">
+                    <div 
+                    onClick={() => setOpenFileBar(true)}
+                    className="px-4 py-3 gap-6 flex w-full hover:bg-stone-900 transition-all duration-300 ease-in-out active:bg-stone-950 items-center">
                         <div><e.icon className="w-5 h-5" color="#FDC700"/></div>
                         <div className="" key={e.id}>{e.name}</div>
                     </div>
                 ))
             }
         </div>
+        </div>
+
+        <div ref={ref} className="absolute w-full h-screen bg-stone-950 flex flex-col p-2"
+        style={{
+            transform: openFileBar ? "translateX(0)" : "translateX(100%)",
+            transition: "transform 0.3s ease-in-out", 
+        }}
+        >
+            <div className="w-full h-full bg-stone-800">
+
+            <div 
+            onClick={() =>{ 
+                setOpenFileBar(false);
+            }}
+            className="w-full bg-stone-900 p-3 hover:bg-stone-700 active:bg-stone-950 gap-2">
+                <div>
+                    <ChevronDoubleLeftIcon className="w-5 h-5" color="#FDC700"/>
+                </div>
+            </div>
+            </div>
+        </div>
+
       </div>
     </>
   );
