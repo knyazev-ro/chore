@@ -1,5 +1,6 @@
 import CommentaryArea from "../../Components/Comments/CommentaryArea";
 import CommentBox from "../../Components/Comments/CommentBox";
+import MessageListCard from "../../Components/Messages/MessageListCard/MessageListCard";
 import PageTemplate from "../../Components/PageTemplates/PageTemplate";
 
 export default function MessagesPage() {
@@ -230,17 +231,100 @@ export default function MessagesPage() {
     },
   ];
 
+  const chats = [
+    {
+      name: "Lilly Thompson",
+      avatar: "https://i.pravatar.cc/150?img=1",
+      lastMessage: "Hey, this was really rude!",
+    },
+    {
+      name: "Marcus Rivera",
+      avatar: "https://i.pravatar.cc/150?img=2",
+      lastMessage: "Did you check the docs I sent?",
+    },
+    {
+      name: "System Notification",
+      avatar: "https://cdn-icons-png.flaticon.com/512/1827/1827379.png",
+      lastMessage: "Your account settings have been updated.",
+    },
+    {
+      name: "Emily Carter",
+      avatar: "https://i.pravatar.cc/150?img=3",
+      lastMessage: "I'll be there in 10 minutes!",
+    },
+    {
+      name: "Jake Henderson",
+      avatar: "https://i.pravatar.cc/150?img=4",
+      lastMessage: "Haha, that's hilarious! 😂",
+    },
+    {
+      name: "Project Team",
+      avatar: "https://cdn-icons-png.flaticon.com/512/3067/3067269.png",
+      lastMessage: "Reminder: Meeting at 3 PM.",
+    },
+    {
+      name: "Unknown Number",
+      avatar: "https://cdn-icons-png.flaticon.com/512/595/595067.png",
+      lastMessage: "You have a new voice message.",
+    },
+    {
+      name: "Anna Delgado",
+      avatar: "https://i.pravatar.cc/150?img=5",
+      lastMessage: "Thanks for your help today!",
+    },
+    {
+      name: "Chris Evans",
+      avatar: "https://i.pravatar.cc/150?img=10",
+      lastMessage: "Hey, are you free this weekend?",
+    },
+    {
+      name: "Sophia Martinez",
+      avatar: "https://i.pravatar.cc/150?img=7",
+      lastMessage: "Let's grab a coffee sometime ☕",
+    },
+    {
+      name: "Gaming Squad",
+      avatar: "https://cdn-icons-png.flaticon.com/512/3616/3616640.png",
+      lastMessage: "Who's up for a match tonight?",
+    },
+    {
+      name: "Ethan Brooks",
+      avatar: "https://i.pravatar.cc/150?img=8",
+      lastMessage: "I can't believe that happened!",
+    },
+    {
+      name: "Olivia Clarke",
+      avatar: "https://i.pravatar.cc/150?img=9",
+      lastMessage: "How was your trip?",
+    },
+    {
+      name: "Tech Support",
+      avatar: "https://cdn-icons-png.flaticon.com/512/1828/1828919.png",
+      lastMessage: "Your ticket #23456 has been resolved.",
+    },
+    {
+      name: "Michael Scott",
+      avatar: "https://i.pravatar.cc/150?img=10",
+      lastMessage: "That's what she said!",
+    },
+  ];
+
   return (
     <PageTemplate menu={menuItems}>
-      <div className="flex flex-col w-full max-h-full h-full bg-stone-950">
-        <div className=" overflow-y-scroll custom-scroll h-full">
-          <CommentBox
-            conversation={conversation}
-            authors={allAuthorsInConversation}
-          />
+      <div className="absolute flex w-screen h-full max-h-full">
+        <div className="w-120 max-w-120 min-w-90 h-full overflow-y-scroll custom-scroll bg-stone-900 flex flex-col gap-2">
+          {chats.map((e) => (
+            <MessageListCard messageInfo={e} />
+          ))}
         </div>
-        <div className="h-42">
-        <CommentaryArea />
+        <div className="flex flex-col w-full max-h-full h-full bg-stone-950 overflow-y-scroll custom-scroll border-4 border-rose-500">
+          <div className="overflow-y-scroll custom-scroll h-full">
+            <CommentBox
+              conversation={conversation}
+              authors={allAuthorsInConversation}
+            />
+          </div>
+          <CommentaryArea />
         </div>
       </div>
     </PageTemplate>
