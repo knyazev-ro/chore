@@ -1,7 +1,9 @@
 import CommentaryArea from "../../Components/Comments/CommentaryArea";
 import CommentBox from "../../Components/Comments/CommentBox";
-import MessageListCard from "../../Components/Messages/MessageListCard/MessageListCard";
+import ChatLeftBar from "../../Components/Messages/ChatRightBar/ChatLeftBar";
+import MessageListCard from "../../Components/Messages/ChatList/MessageListCard/MessageListCard";
 import PageTemplate from "../../Components/PageTemplates/PageTemplate";
+import ChatList from "../../Components/Messages/ChatList/ChatList";
 
 export default function MessagesPage() {
   const conversation = [
@@ -312,11 +314,7 @@ export default function MessagesPage() {
   return (
     <PageTemplate menu={menuItems}>
       <div className="absolute flex w-screen h-full max-h-full">
-        <div className="w-120 max-w-full min-w-90 h-full overflow-y-scroll custom-scroll bg-stone-900 flex flex-col gap-2 border-r-3 border-stone-100">
-          {chats.map((e) => (
-            <MessageListCard messageInfo={e} />
-          ))}
-        </div>
+        <ChatList chats={chats} />
         <div className="flex flex-col w-full max-h-full h-full bg-stone-950">
           <div className="overflow-y-scroll custom-scroll">
             <CommentBox
@@ -327,21 +325,7 @@ export default function MessagesPage() {
           <CommentaryArea />
         </div>
 
-        <div className="comfortaa flex flex-col gap-2 p-2 w-109 h-full bg-stone-950 border-l-3 border-stone-100">
-          <div className="bg-stone-800 w-full min-h-64 flex flex-col p-3 gap-2">
-            <div className="flex gap-2 items-center">
-              <div className="w-16 h-16 bg-stone-100 border-3"></div>
-              <div className="flex flex-col text-stone-100 gap-1">
-                <span className="bg-stone-950 px-2 py-1 items-center text-sm">Kendrick</span>
-                <span className="bg-stone-950 px-2 py-1 items-center text-sm">Lamar</span>
-              </div>
-              {/* <div>(ddd)</div> */}
-            </div>
-            <div className="w-full h-full border-3"></div>
-          </div>
-          <div className="h-full bg-stone-800"></div>
-        </div>
-
+        <ChatLeftBar chatActiveIcon={{}} />
       </div>
     </PageTemplate>
   );
