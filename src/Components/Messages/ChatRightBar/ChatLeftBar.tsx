@@ -8,9 +8,10 @@ import {
   InformationCircleIcon,
   PaperClipIcon,
   PhotoIcon,
+  PlayCircleIcon,
   VideoCameraIcon,
 } from "@heroicons/react/24/outline";
-import { ChevronDoubleLeftIcon } from "@heroicons/react/24/solid";
+import { ChevronDoubleLeftIcon, PlayIcon } from "@heroicons/react/24/solid";
 import { useRef, useState, useEffect } from "react";
 
 export default function ChatLeftBar({
@@ -61,12 +62,75 @@ export default function ChatLeftBar({
     },
   ];
 
+  const files = [
+    {
+      id: 1,
+      title: "file 1.png",
+      type: 1, // image type
+      cover: "https://picsum.photos/200/300?random=1",
+    },
+    {
+      id: 2,
+      title: "file 2.mp4",
+      type: 2, // video type
+      cover: "https://picsum.photos/200/300?random=2",
+    },
+    {
+      id: 3,
+      title: "file 3.txt",
+      type: 3, // some file type
+      cover: "https://picsum.photos/200/300?random=3",
+    },
+    {
+      id: 4,
+      title: "google main page",
+      type: 4, // ref like http https ref type
+      cover: "https://picsum.photos/200/300?random=4",
+    },
+    {
+      id: 5,
+      title: "file 5.gif",
+      type: 5, // gif type
+      cover: "https://media1.tenor.com/m/SH6WwFvNriwAAAAd/dokapon-dokapon-kingdom.gif",
+    },
+    {
+      id: 6,
+      title: "file 6.jpg",
+      type: 1, // image type
+      cover: "https://picsum.photos/200/300?random=6",
+    },
+    {
+      id: 7,
+      title: "file 7.mov",
+      type: 2, // video type
+      cover: "https://picsum.photos/200/300?random=7",
+    },
+    {
+      id: 8,
+      title: "file 8.pdf",
+      type: 3, // document type
+      cover: "https://picsum.photos/200/300?random=8",
+    },
+    {
+      id: 9,
+      title: "file 9.gif",
+      type: 5, // gif type
+      cover: "https://media1.tenor.com/m/d-w-FAgmrVUAAAAC/tornado-twister.gif",
+    },
+    {
+      id: 10,
+      title: "file 10.mp3",
+      type: 6, // audio type
+      cover: "https://picsum.photos/200/300?random=10",
+    },
+  ];
+  
+
   return (
     <>
       <div className="comfortaa flex w-109 max-w-109 h-full bg-stone-950 border-l-3 border-stone-100 overflow-y-scroll custom-scroll overflow-x-hidden relative">
-        
         <div className="w-full h-full flex flex-col  gap-2 p-2 ">
-          <div className="bg-stone-800 w-full flex flex-col p-3 gap-2">
+          <div className="bg-stone-800 w-full flex flex-col p-3 gap-2 border-3 border-stone-950">
             <div className="flex gap-2 items-center">
               <div className="w-17 h-17 bg-stone-100 border-3"></div>
               <div className="flex flex-col text-stone-100 gap-1">
@@ -104,7 +168,7 @@ export default function ChatLeftBar({
             </div>
           </div>
 
-          <div className="h-full bg-stone-800 flex flex-col text-stone-100 text-sm">
+          <div className="h-full bg-stone-800 flex flex-col text-stone-100 text-sm border-3 border-stone-950">
             {tabs.map((e) => (
               <div
                 onClick={() => setOpenFileBar(true)}
@@ -129,38 +193,37 @@ export default function ChatLeftBar({
             transition: "transform 0.3s ease-in-out",
           }}
         >
-          <div className="w-full bg-stone-800 flex flex-col gap-2">
+          <div className="w-full bg-stone-800 flex flex-col gap-2 border-3 border-stone-950">
             <div
               onClick={() => {
                 setOpenFileBar(false);
               }}
-              className="h-full w-full bg-stone-900 p-3 hover:bg-stone-700 active:bg-stone-950 gap-2"
+              className="w-full bg-stone-900 p-3 hover:bg-stone-700 active:bg-stone-950 gap-2 border-b-3 border-stone-950"
             >
               <div>
                 <ChevronDoubleLeftIcon className="w-5 h-5" color="#FDC700" />
               </div>
             </div>
 
-            <div className="w-full flex-wrap flex gap-1 justify-center p-1">
-              <div className="w-18 h-18 bg-stone-900"></div>
-              <div className="w-18 h-18 bg-stone-900"></div>
-              <div className="w-18 h-18 bg-stone-900"></div>
+            <div className="w-full h-full flex-wrap flex gap-1 justify-center p-1">
+              {
+                  files.map(e => (
+                    <div className="relative flex cursor-pointer">
+                        {e.type !== 3 ? <img className="w-18 h-18 bg-stone-900 border-2" src={e.cover}/>
+                    : <div className="w-18 h-18 border-2 flex flex-col items-center justify-center bg-stone-100 gap-1">
+                        <div>
+                        <span className="bg-stone-950 text-stone-100 px-3 py-0.5">{e.title.split('.')[1].toUpperCase()}</span>
+                        </div>
+                        <div className="text-xs text-clip">{e.title}</div>
+                    </div>    
+                    }
+                        {e.type === 2 && <div className="absolute w-full h-full bg-stone-500/10 backdrop-blur-[2px] flex items-center justify-center">
+                            <PlayIcon className="w-6 h-6" color="rgba(255, 255, 255, 0.7)"/>
+                        </div>}
 
-              <div className="w-18 h-18 bg-stone-900"></div>
-              <div className="w-18 h-18 bg-stone-900"></div>
-              <div className="w-18 h-18 bg-stone-900"></div>
-
-              <div className="w-18 h-18 bg-stone-900"></div>
-              <div className="w-18 h-18 bg-stone-900"></div>
-              <div className="w-18 h-18 bg-stone-900"></div>
-
-              <div className="w-18 h-18 bg-stone-900"></div>
-              <div className="w-18 h-18 bg-stone-900"></div>
-              <div className="w-18 h-18 bg-stone-900"></div>
-
-              <div className="w-18 h-18 bg-stone-900"></div>
-              <div className="w-18 h-18 bg-stone-900"></div>
-              <div className="w-18 h-18 bg-stone-900"></div>
+                    </div>
+                ))
+              }
             </div>
           </div>
         </div>
