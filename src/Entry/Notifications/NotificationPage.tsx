@@ -17,7 +17,7 @@ export default function NotificationPage() {
     {
       id: 2,
       title: "Сообщения",
-      route: "/",
+      route: "/messages",
     },
     {
       id: 3,
@@ -154,7 +154,7 @@ export default function NotificationPage() {
   return (
     <>
       <PageTemplate menu={menuItems}>
-        <div className="w-full h-full px-60 flex flex-col">
+        <div className="w-full h-full px-60 flex flex-col bg-blue-500">
           <div className="flex flex-col h-full gap-2.5 justify-end">
             <div className="flex items-end min-h-20 ">
               <div className="min-w-11 min-h-11 max-h-11 h-11 p-1.5 bg-stone-950">

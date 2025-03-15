@@ -6,6 +6,7 @@ import TrelloPage from "./Entry/TrelloPage/TrelloPage";
 import MainPage from "./Entry/Main/MainPage";
 import LogIn from "./Entry/LogIn";
 import NotificationPage from "./Entry/Notifications/NotificationPage";
+import MessagesPage from "./Entry/Messages/MessagesPage";
 
 function App() {
 
@@ -391,7 +392,7 @@ const project = {
       <Route path="trello" element={<TrelloPage project={project}/>}/>
       <Route path="log-in" element={<LogIn/>}/>
       <Route path="notifications" element={<NotificationPage/>}/>
-
+      <Route path="messages" element={<MessagesPage/>}/>
       </Route>
 
     </Routes>
