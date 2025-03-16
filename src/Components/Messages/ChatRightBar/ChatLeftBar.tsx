@@ -22,6 +22,7 @@ export default function ChatLeftBar({
 }) {
   const [enabled, setEnabled] = useState(false);
   const [openFileBar, setOpenFileBar] = useState(false);
+  const [currentTabType, setCurrentTabType] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -172,13 +173,17 @@ export default function ChatLeftBar({
           <div className="h-full bg-stone-800 flex flex-col text-stone-100 text-sm border-3 border-stone-950">
             {tabs.map((e) => (
               <div
-                onClick={() => setOpenFileBar(true)}
+                key={e.id}
+                onClick={() =>{ 
+                    setOpenFileBar(true);
+                    setCurrentTabType(e.id);
+                }}
                 className="px-4 py-3 gap-6 flex w-full hover:bg-stone-900 transition-all duration-300 ease-in-out active:bg-stone-950 items-center"
               >
                 <div>
                   <e.icon className="w-5 h-5" color="#FDC700" />
                 </div>
-                <div className="" key={e.id}>
+                <div >
                   {e.name}
                 </div>
               </div>
@@ -208,7 +213,7 @@ export default function ChatLeftBar({
 
             <div className="w-full h-full flex-wrap flex gap-1 justify-center p-1">
               {
-                  files.map(e => (
+                  files.filter(e => e.type === currentTabType || currentTabType===0).map(e => (
                     <FileTypeCard file={e}/>
                 ))
               }
