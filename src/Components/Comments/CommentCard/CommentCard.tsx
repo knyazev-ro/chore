@@ -20,7 +20,7 @@ export default function CommentCard({
         />
 
         <div className="relative flex bg-stone-100">
-          <div className="z-10 flex flex-col bg-stone-100 w-full border-3 p-3 gap-2">
+          <div className="z-10 flex flex-col bg-stone-100 w-full border-3 border-stone-950 p-3 gap-2">
             <div className="comfortaa inline-block text-stone-950 bg-yellow-400 p-1 border-b-3 border-b-yellow-800">
               {author.full_name}
             </div>
