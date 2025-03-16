@@ -93,7 +93,8 @@ export default function ChatLeftBar({
       id: 5,
       title: "file 5.gif",
       type: 5, // gif type
-      cover: "https://media1.tenor.com/m/SH6WwFvNriwAAAAd/dokapon-dokapon-kingdom.gif",
+      cover:
+        "https://media1.tenor.com/m/SH6WwFvNriwAAAAd/dokapon-dokapon-kingdom.gif",
     },
     {
       id: 6,
@@ -126,7 +127,6 @@ export default function ChatLeftBar({
       cover: "https://picsum.photos/200/300?random=10",
     },
   ];
-  
 
   return (
     <>
@@ -174,18 +174,16 @@ export default function ChatLeftBar({
             {tabs.map((e) => (
               <div
                 key={e.id}
-                onClick={() =>{ 
-                    setOpenFileBar(true);
-                    setCurrentTabType(e.id);
+                onClick={() => {
+                  setOpenFileBar(true);
+                  setCurrentTabType(e.id);
                 }}
                 className="px-4 py-3 gap-6 flex w-full hover:bg-stone-900 transition-all duration-300 ease-in-out active:bg-stone-950 items-center"
               >
                 <div>
                   <e.icon className="w-5 h-5" color="#FDC700" />
                 </div>
-                <div >
-                  {e.name}
-                </div>
+                <div>{e.name}</div>
               </div>
             ))}
           </div>
@@ -212,11 +210,13 @@ export default function ChatLeftBar({
             </div>
 
             <div className="w-full h-full flex-wrap flex gap-1 justify-center p-1">
-              {
-                  files.filter(e => e.type === currentTabType || currentTabType===0).map(e => (
-                    <FileTypeCard file={e}/>
-                ))
-              }
+              {files
+                .filter(
+                  (e) => e.type === currentTabType || currentTabType === 0
+                )
+                .map((e) => (
+                  <FileTypeCard file={e} />
+                ))}
             </div>
           </div>
         </div>
