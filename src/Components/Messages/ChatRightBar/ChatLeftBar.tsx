@@ -13,6 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { ChevronDoubleLeftIcon, PlayIcon } from "@heroicons/react/24/solid";
 import { useRef, useState, useEffect } from "react";
+import FileTypeCard from "./FileTypeCard";
 
 export default function ChatLeftBar({
   chatActiveInfo,
@@ -208,20 +209,7 @@ export default function ChatLeftBar({
             <div className="w-full h-full flex-wrap flex gap-1 justify-center p-1">
               {
                   files.map(e => (
-                    <div className="relative flex cursor-pointer">
-                        {e.type !== 3 ? <img className="w-18 h-18 bg-stone-900 border-2" src={e.cover}/>
-                    : <div className="w-18 h-18 border-2 flex flex-col items-center justify-center bg-stone-100 gap-1">
-                        <div>
-                        <span className="bg-stone-950 text-stone-100 px-3 py-0.5">{e.title.split('.')[1].toUpperCase()}</span>
-                        </div>
-                        <div className="text-xs text-clip">{e.title}</div>
-                    </div>    
-                    }
-                        {e.type === 2 && <div className="absolute w-full h-full bg-stone-500/10 backdrop-blur-[2px] flex items-center justify-center">
-                            <PlayIcon className="w-6 h-6" color="rgba(255, 255, 255, 0.7)"/>
-                        </div>}
-
-                    </div>
+                    <FileTypeCard file={e}/>
                 ))
               }
             </div>
