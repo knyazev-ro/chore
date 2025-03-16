@@ -126,7 +126,67 @@ export default function ChatLeftBar({
       type: 6, // audio type
       cover: "https://picsum.photos/200/300?random=10",
     },
-  ];
+    {
+        id: 11,
+        title: "file 11.png",
+        type: 1, // image type
+        cover: "https://picsum.photos/200/300?random=11",
+      },
+      {
+        id: 12,
+        title: "file 12.avi",
+        type: 2, // video type
+        cover: "https://picsum.photos/200/300?random=12",
+      },
+      {
+        id: 13,
+        title: "file 13.docx",
+        type: 3, // document type
+        cover: "https://picsum.photos/200/300?random=13",
+      },
+      {
+        id: 14,
+        title: "file 14.html",
+        type: 4, // ref type
+        cover: "https://picsum.photos/200/300?random=14",
+      },
+      {
+        id: 15,
+        title: "file 15.gif",
+        type: 5, // gif type
+        cover: "https://picsum.photos/200/300?random=15",
+      },
+      {
+        id: 16,
+        title: "file 16.mp4",
+        type: 2, // video type
+        cover: "https://picsum.photos/200/300?random=16",
+      },
+      {
+        id: 17,
+        title: "file 17.csv",
+        type: 3, // spreadsheet type
+        cover: "https://picsum.photos/200/300?random=17",
+      },
+      {
+        id: 18,
+        title: "file 18.jpeg",
+        type: 1, // image type
+        cover: "https://picsum.photos/200/300?random=18",
+      },
+      {
+        id: 19,
+        title: "file 19.svg",
+        type: 1, // vector image
+        cover: "https://picsum.photos/200/300?random=19",
+      },
+      {
+        id: 20,
+        title: "file 20.mp3",
+        type: 6, // audio type
+        cover: "https://picsum.photos/200/300?random=20",
+      },
+    ];
 
   return (
     <>
