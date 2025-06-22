@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -6,9 +6,50 @@ export default function PageTemplate({
   menu,
   children,
 }: {
-  menu: Array<any>;
+  menu: Array<any>|null;
   children: React.ReactNode;
 }) {
+
+  const menuItems = useMemo( () => menu ?? [
+    {
+      title: "N-Диск",
+      route: "/",
+    },
+    {
+      title: "Камбан",
+      route: "/trello",
+    },
+    {
+      title: "Сообщения",
+      route: "/messages",
+    },
+    {
+      title: "Крауд",
+      route: "/crowd",
+    },
+    {
+      title: "Нотификации",
+      route: "/notifications",
+    },
+    {
+      title: "Календарь",
+      route: "/",
+    },
+    {
+      title: "О команде",
+      route: "/",
+    },
+    {
+      title: "Новости",
+      route: "/",
+    },
+    {
+      title: "Подписка",
+      route: "/",
+    },
+  ], [menu]);
+
+
   const [open, setOpen] = useState(false);
 
   return (
@@ -21,7 +62,7 @@ export default function PageTemplate({
               open ? "transform translate-x-0" : "transform -translate-x-full"
             } w-64 bg-gray-800 z-10 fixed top-0 left-0 h-screen`}
           >
-            <Sidebar menu={menu} />
+            <Sidebar menu={menuItems} />
           </div>
           <div
             className={`w-full h-full flex flex-col overflow-x-hidden overflow-y-scroll custom-scroll border-3 border-stone-100 transition-all duration-500 ${

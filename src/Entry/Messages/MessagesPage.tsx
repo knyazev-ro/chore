@@ -4,6 +4,7 @@ import ChatLeftBar from "../../Components/Messages/ChatRightBar/ChatLeftBar";
 import MessageListCard from "../../Components/Messages/ChatList/MessageListCard/MessageListCard";
 import PageTemplate from "../../Components/PageTemplates/PageTemplate";
 import ChatList from "../../Components/Messages/ChatList/ChatList";
+import MessageLayout from "../../Components/Layouts/MessageLayout";
 
 export default function MessagesPage() {
   const conversation = [
@@ -188,50 +189,6 @@ export default function MessagesPage() {
       return idx === index;
     });
 
-  console.log(allAuthorsInConversation);
-
-  const menuItems = [
-    {
-      id: 0,
-      title: "N-Диск",
-      route: "/",
-    },
-    {
-      id: 1,
-      title: "Камбан",
-      route: "/trello",
-    },
-    {
-      id: 2,
-      title: "Сообщения",
-      route: "/messages",
-    },
-    {
-      id: 3,
-      title: "Нотификации",
-      route: "/notifications",
-    },
-    {
-      id: 4,
-      title: "Календарь",
-      route: "/",
-    },
-    {
-      id: 5,
-      title: "О команде",
-      route: "/",
-    },
-    {
-      id: 5,
-      title: "Новости",
-      route: "/",
-    },
-    {
-      id: 5,
-      title: "Подписка",
-      route: "/",
-    },
-  ];
 
   const chats = [
     {
@@ -312,7 +269,7 @@ export default function MessagesPage() {
   ];
 
   return (
-    <PageTemplate menu={menuItems}>
+    <MessageLayout>
       <div className="absolute flex w-screen h-full max-h-full">
         <ChatList chats={chats} />
         <div className="flex flex-col w-full max-h-full h-full bg-stone-950">
@@ -327,6 +284,6 @@ export default function MessagesPage() {
 
         <ChatLeftBar chatActiveIcon={{}} />
       </div>
-    </PageTemplate>
+    </MessageLayout>
   );
 }

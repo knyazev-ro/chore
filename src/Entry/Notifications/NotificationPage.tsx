@@ -1,50 +1,9 @@
+import NotificationLayout from "../../Components/Layouts/NotificationLayout";
 import NotificationCard from "../../Components/Notifications/NotificationCard/NotificationCard";
 import PageTemplate from "../../Components/PageTemplates/PageTemplate";
 import { BellAlertIcon } from "@heroicons/react/24/outline";
 
 export default function NotificationPage() {
-  const menuItems = [
-    {
-      id: 0,
-      title: "N-Диск",
-      route: "/",
-    },
-    {
-      id: 1,
-      title: "Камбан",
-      route: "/trello",
-    },
-    {
-      id: 2,
-      title: "Сообщения",
-      route: "/messages",
-    },
-    {
-      id: 3,
-      title: "Нотификации",
-      route: "/notifications",
-    },
-    {
-      id: 4,
-      title: "Календарь",
-      route: "/",
-    },
-    {
-      id: 5,
-      title: "О команде",
-      route: "/",
-    },
-    {
-      id: 5,
-      title: "Новости",
-      route: "/",
-    },
-    {
-      id: 5,
-      title: "Подписка",
-      route: "/",
-    },
-  ];
 
   const notifications = [
     {
@@ -153,8 +112,8 @@ export default function NotificationPage() {
 
   return (
     <>
-      <PageTemplate menu={menuItems}>
-        <div className="absolute w-full h-full px-60 flex flex-col bg-blue-500">
+      <NotificationLayout>
+        <div className="absolute w-full h-full px-20 flex flex-col bg-blue-200">
           <div className="flex flex-col h-full gap-2.5 justify-end">
             <div className="flex items-end min-h-20 ">
               <div className="min-w-11 min-h-11 max-h-11 h-11 p-1.5 bg-stone-950">
@@ -169,14 +128,14 @@ export default function NotificationPage() {
               </div>
             </div>
 
-            <div className="flex flex-col h-full w-full bg-rose-500 border-3 border-stone-950 overflow-y-scroll custom-scroll shadow-xl">
+            <div className="flex flex-col h-full w-full bg-rose-500 border-4 border-stone-950 overflow-y-scroll custom-scroll shadow-xl">
                 {
                     notifications.map(e => (<NotificationCard notification={e}/>))
                 }
             </div>
           </div>
         </div>
-      </PageTemplate>
+     </NotificationLayout>
     </>
   );
 }
