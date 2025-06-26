@@ -7,7 +7,7 @@ import Tab from "../../Components/Tab/Tab";
 import AddTagPlus from "./AddTagPlus";
 import ChoreStatusCell from "../../Chore/ChoreCard/ChoreStatusCell";
 import StatusLine from "../../Components/StatusLine/StatusLine";
-import TimePing from "../../Components/TimePing.tsx/TimePing";
+import TimePing from "../../Components/TimePing/TimePing";
 import DataTab from "../../Components/Tab/Tabs/DataTab";
 import { Cog6ToothIcon } from "@heroicons/react/24/solid";
 import { PaintBrushIcon } from "@heroicons/react/24/solid";
@@ -179,12 +179,18 @@ export default function CurrentChoreModal({
     },
   ];
 
+  const onCloseModal = () => {
+    setShowModal(false);
+  }
+
   return (
-    <Modal showModal={showModal}>
-      <div className="relative w-full h-screen flex items-center justify-center">
-        <div className="z-10 flex flex-col w-11/12 h-11/12 bg-stone-100 border-t-4 border-l-4 border-r-4 border-black shadow-md items-center overflow-hidden">
+    <Modal showModal={showModal} onCloseModal={onCloseModal}>
+      <div className="w-[calc(100vw-10rem)] h-[calc(100vh-2rem)] relative">
+        <div className="w-full flex h-full items-center justify-center">
+
+        <div className="z-10 flex flex-col w-full h-full bg-stone-100 border-t-4 border-l-4 border-r-4 border-black shadow-md items-center overflow-hidden">
          
-          <div className="z-20 bg-blue-600 border-b-3 h-16 flex items-center justify-between px-4 py-2 w-full z-1">
+          <div className="z-20 bg-blue-600 border-b-3 h-16 flex items-center justify-between px-4 py-2 w-full">
             <div className="flex gap-2 items-center w-72">
               <ChoreStatusCell value={singleChore} />
               <StatusLine chore={singleChore} columns={columns}/>
@@ -300,12 +306,13 @@ export default function CurrentChoreModal({
           </div>
         </div>
           </div>
-        <div className="absolute flex flex-col w-11/12 h-11/12 translate-y-2 shadow-md overflow-hidden border-4">
+        <div className="absolute flex flex-col w-full h-full translate-y-2 shadow-md overflow-hidden border-4">
           <div
             className="h-full bg-blue-600 animate-pulse"
             style={{ width: `${widthPercentage}%` }}
           ></div>
         </div>
+                </div>
       </div>
     </Modal>
   );
