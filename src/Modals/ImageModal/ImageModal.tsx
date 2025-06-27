@@ -62,7 +62,7 @@ export default function ImageModal({
               />
             </div>
 
-            <div className=" text-stone-100 text-clip custom-scroll overflow-y-scroll w-full md:text-md text-xs p-2 max-h-[calc(100vh-10rem)]">
+            <div className=" text-stone-100 custom-scroll overflow-y-scroll w-86 md:text-md text-xs p-2 max-h-[calc(100vh-10rem)]">
               <table className="w-full text-left border-collapse">
                 <tbody>
                   <tr>
