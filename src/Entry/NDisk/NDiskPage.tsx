@@ -10,7 +10,7 @@ export default function NDiskPage() {
   const percentage = "40%"; // Example percentage for the progress bar
   return (
     <NDiskLayout>
-      <div className="w-full h-full flex flex-col gap-1 bg-stone-200 p-2 comfortaa">
+      <div className="w-screen h-screen flex flex-col gap-1 bg-stone-200 p-2 comfortaa">
         <div className="flex flex-col items-center justify-between gap-2 gap-y-2">
           <h1 className="text-2xl font-bold flex gap-2 border-b-2 px-2">
             <DocumentChartBarIcon className="w-7 h-7 stroke-2" title="n-disk"/>
