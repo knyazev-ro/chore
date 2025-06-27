@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -48,9 +48,22 @@ export default function PageTemplate({
       route: "/",
     },
   ], [menu]);
-
-
+  
   const [open, setOpen] = useState(false);
+  
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent){
+      if(event.ctrlKey && event.key.toLowerCase() === 'b'){
+        event.preventDefault();
+        setOpen(p => !p);
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+   return () => window.removeEventListener('keydown', handleKeyDown);
+
+  }, []);
+
 
   return (
     <>

@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -18,7 +18,26 @@ export default function Modal({
   onCloseModal,
   children,
 }: ModalProps) {
-  // if(!showModal) return null;
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent)
+    {
+      if(event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'k')
+      {
+        event.preventDefault();
+        onCloseModal();
+      }
+    }
+
+    if(showModal)
+    {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => window.removeEventListener('keydown', handleKeyDown);
+
+  });
+  
   return (
     <Transition appear show={showModal} as={Fragment}>
       <Dialog as="div" onClose={onCloseModal}>

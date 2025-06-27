@@ -393,7 +393,7 @@ function App() {
     title_color: "#FFFFFF", // Чисто белый для контраста
     columns: columns,
     avatar:
-      "https://img.freepik.com/free-vector/chameleon-logo-template_23-2148982814.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQrMMmb7KuooSZRVKrjLDVSK1M6yjWCb61VQ&s",
     creator: {
       name: "Алексей Новиков",
       role: "Product Owner",
