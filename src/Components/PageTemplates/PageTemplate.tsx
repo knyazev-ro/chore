@@ -65,6 +65,7 @@ export default function PageTemplate({
             <Sidebar menu={menuItems} />
           </div>
           <div
+            onClick={() => setOpen(false)}
             className={`w-full h-full flex flex-col overflow-x-hidden overflow-y-scroll custom-scroll border-3 border-stone-100 transition-all duration-500 ${
               open ? "ml-64" : "ml-0"
             }`}

@@ -44,7 +44,7 @@ export default function Header({ open, setOpen }: { open: any; setOpen: any }) {
         {/* <img src={"../assets/chore-logo.svg"}/> */}
         <div
           onClick={() => nav("/")}
-          className="flex gap-4 items-center cursor-pointer"
+          className="flex gap-4 items-center cursor-pointer text-xs md:text-xl"
         >
           <div className="w-10 h-10">
           {/* <Transition
@@ -80,17 +80,17 @@ export default function Header({ open, setOpen }: { open: any; setOpen: any }) {
           leaveFrom="opacity-100 translate-y-0"
           leaveTo="opacity-0 -translate-y-2"
         >
-        <div className="text-stone-100 text-sm">{currentService}</div>
+        <div className="text-stone-100 text-[10px] px-1 text-center md:text-sm">{currentService}</div>
         </Transition>
       </div>
       <div></div>
-      <div className="flex items-center justify-center gap-6">
+      <div className="flex items-center justify-center gap-3 md:gap-6">
         <div>
-          <MagnifyingGlassIcon className="w-6 h-6" color="white" />
+          <MagnifyingGlassIcon className="md:h-6 h-4" color="white" />
         </div>
         <div
           onClick={() => nav("/log-in")}
-          className="bg-stone-800 px-4 py-2 border-3 border-stone-100 flex justify-center items-center text-xs cursor-pointer hover:bg-stone-900 transition-all duration-200 ease-in-out hover:scale-102"
+          className="bg-stone-800 px-4 py-2 border-3 border-stone-100 flex justify-center items-center md:text-xs text-[8px] cursor-pointer hover:bg-stone-900 text-nowrap transition-all duration-200 ease-in-out hover:scale-102"
         >
           Log In
         </div>

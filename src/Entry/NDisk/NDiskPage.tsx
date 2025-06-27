@@ -23,7 +23,7 @@ export default function NDiskPage() {
           </p>
         </div>
         <DropzoneFile setFiles={setFiles} />
-        <div className="flex gap-2 w-full relative h-106 py-2">
+        <div className="flex gap-2 w-full lg:h-[calc(100vh-17rem)] md:h-[calc(100vh-19rem)] h-[calc(100vh-23rem)] custom-scroll relative py-2">
           <div className="border-2 border-dotted w-1/2 custom-scroll bg-stone-300 overflow-y-scroll flex flex-wrap p-1">
             {files.map((file, index) => (
               <ImageCard src={URL.createObjectURL(file)} name={file.name} idx={index}/>
