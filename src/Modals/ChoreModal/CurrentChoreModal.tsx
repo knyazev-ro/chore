@@ -190,7 +190,7 @@ export default function CurrentChoreModal({
 
         <div className="z-10 flex flex-col w-full h-full bg-stone-100 border-t-4 border-l-4 border-r-4 border-black shadow-md items-center overflow-hidden">
          
-          <div className="z-20 bg-blue-600 border-b-3 h-16 flex items-center justify-between px-4 py-2 w-full">
+          <div className="z-20 bg-blue-600 h-16 flex items-center justify-between px-4 py-2 w-full">
             <div className="flex gap-2 items-center w-72">
               <ChoreStatusCell value={singleChore} />
               <StatusLine chore={singleChore} columns={columns}/>
