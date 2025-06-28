@@ -22,7 +22,7 @@ export default function Modal({
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent)
     {
-      if(event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'k')
+      if(event.ctrlKey && event.shiftKey && (event.key.toLowerCase() === 'k' || event.key.toLowerCase() === 'л'))
       {
         event.preventDefault();
         onCloseModal();

@@ -53,7 +53,7 @@ export default function PageTemplate({
   
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent){
-      if(event.ctrlKey && event.key.toLowerCase() === 'b'){
+      if(event.ctrlKey && (event.key.toLowerCase() === 'b' || event.key.toLowerCase() === 'и')){
         event.preventDefault();
         setOpen(p => !p);
       }
