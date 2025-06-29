@@ -1,6 +1,7 @@
 import NDiskLayout from "../../../Components/Layouts/NDiskLayout";
 import NDiskTable from "../../../Components/Tables/NDiskTable";
 import ProfileInfo from "../../../Components/NDisk/ProfileInfo";
+import { useEffect, useState } from "react";
 
 export default function NDiskDashboard() {
   const [isLoaded, setIsLoaded] = useState(false);
