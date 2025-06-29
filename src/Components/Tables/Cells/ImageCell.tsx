@@ -3,7 +3,7 @@ import ImageModal from "../../../Modals/ImageModal/ImageModal";
 
 export default function ImageCell({ image, name, id }) {
   const [openImageModal, setOpenImageModal] = useState(false);
-
+    const [hideModal, setHideModal] = useState(false);
   const handleCloseModal = () => {
     setOpenImageModal(false);
   };
@@ -15,17 +15,18 @@ export default function ImageCell({ image, name, id }) {
           className="w-full h-full object-cover"
           src={image}
           onError={(e) => {
+            setHideModal(true);
             (e.target as HTMLImageElement).src = "/error.png";
           }}
         />
       </div>
-      <ImageModal
+     {!hideModal && <ImageModal
         src={image}
         name={name}
         idx={id}
         showModal={openImageModal}
         onCloseModal={handleCloseModal}
-      />
+      />}
     </div>
   );
 }
