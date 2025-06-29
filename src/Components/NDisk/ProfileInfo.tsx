@@ -5,7 +5,9 @@ import api from "../../api/api";
 
 export default function ProfileInfo({ isLoaded }: { isLoaded: boolean }) {
   // 👇 мок-данные пока шо нет авторизации, так что мок юзер
-  const [stats, setStats] = useState(null);
+  const [stats, setStats] = useState({
+    //
+  });
   const user = {
     name: "Ross Geller",
     role: "Разработчик",
@@ -64,7 +66,7 @@ export default function ProfileInfo({ isLoaded }: { isLoaded: boolean }) {
     </div>
     <div className="flex justify-between">
       <span className="font-semibold">Всего загрузок:</span>
-      <span className="text-stone-500">17</span>
+      <span className="text-stone-500">{String(Object.values(stats).reduce((x, y) => Number(x) + Number(y), 0))}</span>
     </div>
     <div className="flex justify-between">
       <span className="font-semibold">Последняя активность:</span>
