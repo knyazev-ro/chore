@@ -9,6 +9,7 @@ import CrowdPage from "./Entry/Crowd/CrowdPage";
 import NDiskPage from "./Entry/NDisk/NDiskPage";
 import project from './mock/project.ts';
 import NDiskDashboard from './Entry/NDisk/Pages/NDiskDashboard.tsx';
+import { useEffect } from 'react';
 
 declare global {
   interface Window {
@@ -18,10 +19,12 @@ declare global {
 
 function App() {
 
-  window.Echo.channel('ndisk-compression')
-    .listen('.ndisk.compression', (e) => {
-        console.log('Ответ пришёл:', e.data.message, e.data.compressedImageModel);
-    });
+  useEffect(() => {
+    window.Echo.channel('ndisk-compression')
+      .listen('.ndisk.compression', (e) => {
+          console.log('Ответ пришёл:', e.data.message, e.data.compressedImageModel);
+      });
+  }, []);
     
   return (
     <>
