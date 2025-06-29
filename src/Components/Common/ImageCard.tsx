@@ -36,9 +36,7 @@ export default function ImageCard({
         </div>
       </button>
       <ImageModal
-        metadata={{
-          file.getSize
-        }}
+        metadata={null}
         extension={file.type.split('/')[1]}
         size={file.size}
         src={src}
