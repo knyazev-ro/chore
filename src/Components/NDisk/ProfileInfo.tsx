@@ -1,18 +1,24 @@
 import { Transition, TransitionChild } from "@headlessui/react";
 import { UserIcon, ClockIcon, CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
+import api from "../../api/api";
 
 export default function ProfileInfo({ isLoaded }: { isLoaded: boolean }) {
-  // 👇 мок-данные
+  // 👇 мок-данные пока шо нет авторизации, так что мок юзер
+  const [stats, setStats] = useState(null);
   const user = {
-    name: "Иван Петров",
+    name: "Ross Geller",
     role: "Разработчик",
     id: 42,
-    stats: {
-      pending: 3,
-      compressed: 12,
-      failed: 2,
-    },
   };
+
+  const loadStatusData = async () => {
+    return await api.get('/ndisk/get-status-data').then(res => setStats(res.data)).catch(e => console.log(e));
+  }
+
+  useEffect(() => {
+    loadStatusData();
+  }, []);
 
   return (
     <div className="comfortaa min-w-82 w-82 h-[calc(100vh-5rem)] overflow-y-scroll overflow-x-hidden custom-scroll">
@@ -81,7 +87,7 @@ export default function ProfileInfo({ isLoaded }: { isLoaded: boolean }) {
           <div className="w-full bg-blue-500 h-10 min-h-10 flex text-stone-100 text-md items-center px-2 gap-2">
             <ClockIcon className="w-5 h-5" />
             <span className="font-semibold">Выполняется:</span>
-            <span>{user.stats.pending}</span>
+            <span>{stats?.pending ?? 0}</span>
           </div>
         </TransitionChild>
         <TransitionChild
@@ -95,7 +101,7 @@ export default function ProfileInfo({ isLoaded }: { isLoaded: boolean }) {
           <div className="w-full bg-yellow-500 h-10 min-h-10 flex text-stone-100 text-md items-center px-2 gap-2">
             <CheckCircleIcon className="w-5 h-5" />
             <span className="font-semibold">Сжато успешно:</span>
-            <span>{user.stats.compressed}</span>
+            <span>{stats?.compressed ?? 0}</span>
           </div>
         </TransitionChild>
 
@@ -110,7 +116,7 @@ export default function ProfileInfo({ isLoaded }: { isLoaded: boolean }) {
           <div className="w-full bg-rose-500 h-10 min-h-10 flex text-stone-100 text-md items-center px-2 gap-2">
             <XCircleIcon className="w-5 h-5" />
             <span className="font-semibold">С ошибкой:</span>
-            <span>{user.stats.failed}</span>
+            <span>{stats?.failed ?? 0}</span>
           </div>
         </TransitionChild>
     </div>

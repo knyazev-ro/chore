@@ -1,10 +1,31 @@
-export default function ImageCell({image})
-{
-    return <div className="w-full h-full flex items-center justify-center">
-        <div className="w-20 h-20 flex items-center justify-center text-center border-2 border-stone-100">
-        <img className="w-full h-full object-cover"
-            src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg"
+import { useState } from "react";
+import ImageModal from "../../../Modals/ImageModal/ImageModal";
+
+export default function ImageCell({ image, name, id }) {
+  const [openImageModal, setOpenImageModal] = useState(false);
+
+  const handleCloseModal = () => {
+    setOpenImageModal(false);
+  };
+
+  return (
+    <div className="w-full h-full flex items-center justify-center">
+      <div onClick={()=>setOpenImageModal(true)} className="w-20 h-20 flex items-center justify-center text-center border-2 border-stone-100">
+        <img
+          className="w-full h-full object-cover"
+          src={image}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "/error.png";
+          }}
         />
+      </div>
+      <ImageModal
+        src={image}
+        name={name}
+        idx={id}
+        showModal={openImageModal}
+        onCloseModal={handleCloseModal}
+      />
     </div>
-    </div>
+  );
 }

@@ -1,48 +1,28 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTable, usePagination } from "react-table"; // highlight-line
 import ImageCell from "./Cells/ImageCell";
-import { ChevronDoubleDownIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronDoubleDownIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/24/outline";
 import Pagination from "@mui/material/Pagination";
+import TablePagination from "./TablePagination";
+import api from "../../api/api";
 
 export default function NDiskTable() {
-  const data = useMemo(
-    () => [
-      {
-        name: "image_001.png",
-        extension: "png",
-        original_file_size: "2.3 MB",
-        compressed_file_size: "840 KB",
-        compression_ratio: "0.35",
-        status_label: "Сжато",
-        author: {
-          name: "Иван Петров",
-        },
-      },
-      {
-        name: "pic_final.jpeg",
-        extension: "jpeg",
-        original_file_size: "5.1 MB",
-        compressed_file_size: "1.2 MB",
-        compression_ratio: "0.24",
-        status_label: "Сжато",
-        author: {
-          name: "Анна Смирнова",
-        },
-      },
-      {
-        name: "broken_upload.jpg",
-        extension: "jpg",
-        original_file_size: "3.0 MB",
-        compressed_file_size: "-",
-        compression_ratio: "-",
-        status_label: "Ошибка",
-        author: {
-          name: "User X",
-        },
-      },
-    ],
-    []
-  );
+
+const [channelHasBeenUpdated, setChannelHasBeenUpdated] = useState(false);
+
+  const [pageData, setPageData] = useState({
+    perpage: localStorage.getItem("perpage") ?? 10,
+    page: localStorage.getItem("page") ?? 0,
+    sortby: localStorage.getItem("sortby") ?? "id",
+    sortdir: localStorage.getItem("sortdir") ?? "asc",
+    filters: localStorage.getItem("filters") ?? null,
+    pagecount: null,
+  });
+
+  const [data, setData] = useState([]);
 
   const columns = useMemo(
     () => [
@@ -54,24 +34,28 @@ export default function NDiskTable() {
       {
         Header: "Оригинал",
         accessor: "original_file_path",
-        Cell: ({ row }) => (
-          <ImageCell
-            image={
-              "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg"
-            }
-          />
-        ),
+        Cell: ({ row }) => {
+          return (
+            <ImageCell
+              name={row.original.name}
+              id={row.original.id}
+              image={row.original.url_original_file_path}
+            />
+          );
+        },
       },
       {
         Header: "Сжатое представление",
         accessor: "compressed_file_path",
-        Cell: ({ row }) => (
-          <ImageCell
-            image={
-              "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg"
-            }
-          />
-        ),
+        Cell: ({ row }) => {
+          return (
+            <ImageCell
+              name={row.original.name}
+              id={row.original.id}
+              image={row.original.url_compressed_file_path}
+            />
+          );
+        },
       },
       {
         Header: "Расширение",
@@ -92,19 +76,20 @@ export default function NDiskTable() {
       {
         Header: "Статус",
         accessor: "status_label",
-        Cell: ({ value }) => (
-          <span
+        id: 'status',
+        Cell: ({row, value }) => {
+          return (<span
             className={
-              value === "Сжато"
+              row.original.status === 1
                 ? "text-green-600 font-semibold"
-                : value === "Ошибка"
+                :  row.original.status === 2
                 ? "text-red-600 font-semibold"
                 : "text-yellow-600 font-semibold"
             }
           >
             {value}
           </span>
-        ),
+        )},
       },
       {
         Header: "Пользователь",
@@ -114,37 +99,66 @@ export default function NDiskTable() {
     []
   );
 
-  const initialState = {
-    pageSize: 10,
-    pageIndex: 0,
-  };
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
     rows,
     prepareRow,
-    page,
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
-    pageCount,
-    gotoPage,
-    nextPage,
-    previousPage,
-    setPageSize,
-    state: { pageIndex, pageSize },
-  } = useTable({ columns, data, initialState }, usePagination);
+  } = useTable({ columns, data});
 
-  const pages = [1, 2, 3, 4, 5];
+
+  const updateTableData = async () => {
+    return await api
+      .get("/ndisk/compressed-images", {
+        params: pageData,
+      })
+      .then((response) => {
+        setData(response.data.data);
+        setPageData({...pageData, pagecount:response.data.last_page})
+        console.log(response);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    updateTableData();
+  }, [pageData.page, pageData.perpage, channelHasBeenUpdated]); // следим за изменениями
+
+  const gotoPage = (value) => {
+    localStorage.setItem("page", value + 1);
+     setPageData((prev) => ({ ...prev, page: value + 1 }));
+    // updateTableData();
+  };
+
+  const setPageSize = (value) => {
+    localStorage.setItem("perpage", value);
+      setPageData((prev) => ({ ...prev, perpage: value }));
+    // updateTableData();
+  };
+
+useEffect(() => {
+  const channel = window.Echo.channel('ndisk-compression')
+    .listen('.ndisk.compression', (e) => {
+      setChannelHasBeenUpdated(p => !p);
+    });
+
+  return () => {
+    channel.stopListening('.ndisk.compression');
+    window.Echo.leave('ndisk-compression');
+  };
+}, []); // только один раз при монтировании
 
   return (
-    <div className="w-full overflow-x-scroll custom-scroll relative">
+    <div className="w-full h-full relative flex flex-col">
+        <div className="border-2 border-blue-500 flex flex-col max-h-[calc(100vh-8rem)] overflow-y-scroll custom-scroll">
       <table
         {...getTableProps()}
-        className="bg-blue-500 border-blue-700 border-2 min-w-full"
+        className="bg-blue-500 min-w-full"
       >
-        <thead>
+        <thead
+            className="sticky top-0 bg-blue-500 z-10"
+        >
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
@@ -178,68 +192,14 @@ export default function NDiskTable() {
           })}
         </tbody>
       </table>
-      <div className="pagination comfortaa text-sm">
-        <div className="flex items-center py-1 w-full justify-center gap-2">
-            <Pagination count={10} variant="outlined" shape="rounded" />
-          {/* <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-            <ChevronDoubleDownIcon className="w-5 rotate-90"/>
-          </button>{" "}
-          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-            <ChevronDownIcon className="w-5 rotate-90"/>
-
-          </button>{" "}
-          <div className="flex items-center gap-1">
-            {pages.map((e, idx) => (
-              <div
-                className={`p-2 w-8 h-8 text-center items-center justify-center flex cursor-pointer rounded-md comfortaa text-sm border bg-blue-500 text-stone-100`}
-              >
-                {e}
-              </div>
-            ))}
-          </div>
-          <button onClick={() => nextPage()} disabled={!canNextPage}>
-                        <ChevronDownIcon className="w-5 -rotate-90"/>
-
-          </button>{" "}
-          <button
-            onClick={() => gotoPage(pageCount - 1)}
-            disabled={!canNextPage}
-          >
-                        <ChevronDoubleDownIcon className="w-5 -rotate-90"/>
-
-          </button>{" "}
-          <span>
-            Page{" "}
-            <strong>
-              {pageIndex + 1} of {pageOptions.length}
-            </strong>{" "}
-          </span> */}
-          <span>
-            | Перейти к:{" "}
-            <input
-              type="number"
-              defaultValue={pageIndex + 1}
-              onChange={(e) => {
-                const page = e.target.value ? Number(e.target.value) - 1 : 0;
-                gotoPage(page);
-              }}
-              style={{ width: "100px" }}
-            />
-          </span>{" "}
-          <select
-            value={pageSize}
-            onChange={(e) => {
-              setPageSize(Number(e.target.value));
-            }}
-          >
-            {[10, 20, 30, 40, 50].map((pageSize) => (
-              <option key={pageSize} value={pageSize}>
-                Показать {pageSize}
-              </option>
-            ))}
-          </select>
         </div>
-      </div>
+      <TablePagination
+        pageIndex={pageData.page-1}
+        pageSize={pageData.perpage}
+        setPageSize={setPageSize}
+        gotoPage={gotoPage}
+        pageCount={pageData.pagecount}
+      />
     </div>
   );
 }
