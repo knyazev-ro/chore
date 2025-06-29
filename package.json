@@ -11,11 +11,12 @@
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@mui/base": "^5.0.0-beta.40-0",
     "@mui/icons-material": "^6.4.7",
+    "@mui/material": "^7.1.2",
     "@tailwindcss/cli": "^4.0.8",
     "@tailwindcss/vite": "^4.0.8",
     "@types/cal-heatmap": "^3.5.39",
