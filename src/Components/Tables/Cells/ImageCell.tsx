@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ImageModal from "../../../Modals/ImageModal/ImageModal";
 
-export default function ImageCell({ image, name, id }) {
+export default function ImageCell({ image, name, id, metadata=null, extension=null, size=null}) {
   const [openImageModal, setOpenImageModal] = useState(false);
   const handleCloseModal = () => {
     setOpenImageModal(false);
@@ -19,6 +19,10 @@ export default function ImageCell({ image, name, id }) {
         />
       </div>
      <ImageModal
+        metadata={metadata}
+        extension={extension}
+        size={size}
+        
         src={image}
         name={name}
         idx={id}

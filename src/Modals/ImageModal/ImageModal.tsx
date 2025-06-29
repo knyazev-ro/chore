@@ -8,6 +8,9 @@ export default function ImageModal({
   name,
   idx,
   showModal,
+  metadata,
+  extension,
+  size,
   onCloseModal,
 }: {
   src: string;
@@ -24,6 +27,8 @@ export default function ImageModal({
     link.click();
     link.remove();
   };
+  console.log(metadata);
+  
 
   return (
     <Modal showModal={showModal} onCloseModal={onCloseModal}>
@@ -73,18 +78,18 @@ export default function ImageModal({
                   </tr>
                   <tr>
                     <th className="border-b border-stone-700 p-2">Размер</th>
-                    <td className="border-b border-stone-700 p-2">1.2 MB</td>
+                    <td className="border-b border-stone-700 p-2">{size ? Math.round(size/1024 *100)/100 : ''} MB</td>
                   </tr>
                   <tr>
                     <th className="border-b border-stone-700 p-2">Тип</th>
-                    <td className="border-b border-stone-700 p-2">JPEG</td>
+                    <td className="border-b border-stone-700 p-2">{extension?.toUpperCase() ?? ''}</td>
                   </tr>
                   <tr>
                     <th className="border-b border-stone-700 p-2">
                       Метаданные
                     </th>
                     <td className="border-b border-stone-700 p-2">
-                      1024×768, ISO 100, f/2.8
+                      {`${metadata?.width ?? ''}x${metadata?.height ?? ''}, ${metadata?.mime_type?.toUpperCase() ?? ''}, Compressed File in Image Format: ${metadata?.png_compressed_image_size ? Math.round(metadata?.png_compressed_image_size/1024 * 100)/100 : ''} MB`}
                     </td>
                   </tr>
                 </tbody>

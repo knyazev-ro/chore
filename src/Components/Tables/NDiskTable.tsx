@@ -37,6 +37,9 @@ const [channelHasBeenUpdated, setChannelHasBeenUpdated] = useState(false);
         Cell: ({ row }) => {
           return (
             <ImageCell
+            metadata={row.original.metadata}
+            extension={row.original.extension}
+            size={row.original.original_file_size}
               name={row.original.name}
               id={row.original.id}
               image={row.original.url_original_file_path}
@@ -50,6 +53,9 @@ const [channelHasBeenUpdated, setChannelHasBeenUpdated] = useState(false);
         Cell: ({ row }) => {
           return (
             <ImageCell
+            metadata={row.original.metadata}
+            extension={row.original.extension}
+            size={row.original.compressed_file_size}
               name={row.original.name}
               id={row.original.id}
               image={row.original.url_compressed_file_path}

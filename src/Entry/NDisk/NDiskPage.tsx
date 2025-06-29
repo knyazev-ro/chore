@@ -57,6 +57,7 @@ export default function NDiskPage() {
           <div className="border-2 border-dotted w-1/2 custom-scroll bg-stone-300 overflow-y-scroll flex flex-wrap p-1">
             {files.map((file, index) => (
               <ImageCard
+                file={file}
                 src={URL.createObjectURL(file)}
                 name={file.name}
                 idx={index}
