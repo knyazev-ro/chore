@@ -157,7 +157,7 @@ useEffect(() => {
 
   return (
     <div className="w-full h-full relative flex flex-col">
-        <div className="border-2 border-blue-500 flex flex-col max-h-[calc(100vh-8rem)] overflow-y-scroll custom-scroll">
+        <div className="border-2 border-blue-500 flex flex-col max-h-[calc(100vh-8rem)] h-[calc(100vh-8rem)] overflow-y-scroll custom-scroll">
       <table
         {...getTableProps()}
         className="bg-blue-500 min-w-full"
