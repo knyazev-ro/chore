@@ -68,7 +68,7 @@ export default function ImageModal({
                   <tr>
                     <th className="border-b border-stone-700 p-2">Название</th>
                     <td className="border-b border-stone-700 p-2">
-                      image1.jpg
+                     {name}
                     </td>
                   </tr>
                   <tr>
