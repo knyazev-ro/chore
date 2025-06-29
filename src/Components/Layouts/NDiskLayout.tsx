@@ -1,10 +1,10 @@
 import PageTemplate from "../PageTemplates/PageTemplate";
-import trelloMenuItems from "../../constants/menu-items/trelloMenuItems";
+import ndiskMenuItems from "../../constants/menu-items/ndiskMenuItems";
 
 export default function NDiskLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <PageTemplate menu={trelloMenuItems}>{children}</PageTemplate>;
+  return <PageTemplate menu={ndiskMenuItems}>{children}</PageTemplate>;
 }

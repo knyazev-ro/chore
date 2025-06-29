@@ -29,7 +29,7 @@ export default function DropzoneFile({setFiles}: {setFiles: (files: any[]) => vo
 console.log(acceptedFiles?.length);
 
   return (
-    <div className="border-2 comfortaa flex items-center justify-center border-dashed p-4" {...getRootProps()} style={{
+    <div className="border-2 w-full comfortaa flex items-center justify-center border-dashed p-4" {...getRootProps()} style={{
       backgroundColor: acceptedFiles?.length >= 1 ? '#0C0A09' : 'white'
     }}>
       <input {...getInputProps()} />
